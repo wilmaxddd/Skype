@@ -21,6 +21,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import org.bouncycastle.openpgp.PGPException;
 import org.bouncycastle.util.Arrays;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.FileConfiguration;
 
 import codes.wilma24.Skype.api.v1_0_R1.command.CommandMap;
 import codes.wilma24.Skype.api.v1_0_R1.data.types.Call;
@@ -29,8 +31,6 @@ import codes.wilma24.Skype.api.v1_0_R1.packet.PacketType;
 import codes.wilma24.Skype.api.v1_0_R1.pgp.PGPUtilities;
 import codes.wilma24.Skype.api.v1_0_R1.plugin.event.EventHandler;
 import codes.wilma24.Skype.api.v1_0_R1.socket.SocketHandlerContext;
-import codes.wilma24.Skype.api.v1_0_R1.sqlite.ConfigurationSection;
-import codes.wilma24.Skype.api.v1_0_R1.sqlite.FileConfiguration;
 import codes.wilma24.Skype.api.v1_0_R1.uuid.UUID;
 import codes.wilma24.Skype.server.v1_0_R1.command.AcceptCallDataStreamRequestCmd;
 import codes.wilma24.Skype.server.v1_0_R1.command.AcceptCallRequestCmd;
@@ -286,14 +286,22 @@ public class Skype {
 	}
 
 	public Skype() {
-		try {
-			config = new FileConfiguration("config.db")
-					.getConfigurationSection();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		codes.wilma24.Skype.api.v1_0_R1.bukkit.ConfigurationManager root = new codes.wilma24.Skype.api.v1_0_R1.bukkit.ConfigurationManager();
+        root.setup(new File("config.yml"));
+        ConfigurationSection section = root.getData();
+        config = section;
+        Thread thread = new Thread(() -> {
+            while (true) {
+                root.saveData();
+                try {
+                    Thread.sleep(20000L);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
 		conversationManager = new ConversationManager(config);
 		userManager = new UserManager(config);
 	}

@@ -18,7 +18,6 @@ import codes.wilma24.Skype.api.v1_0_R1.command.CommandMap;
 import codes.wilma24.Skype.api.v1_0_R1.packet.PacketType;
 import codes.wilma24.Skype.api.v1_0_R1.plugin.event.EventHandler;
 import codes.wilma24.Skype.api.v1_0_R1.socket.SocketHandlerContext;
-import codes.wilma24.Skype.api.v1_0_R1.sqlite.ConfigurationSection;
 import codes.wilma24.Skype.api.v1_0_R1.uuid.UUID;
 import codes.wilma24.Skype.v1_0_R1.command.AcceptCallRequestCmd;
 import codes.wilma24.Skype.v1_0_R1.command.AcceptContactRequestCmd;

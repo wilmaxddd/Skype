@@ -1,5 +1,6 @@
 package codes.wilma24.Skype.server.v1_0_R1.manager;
 
+import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -8,15 +9,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import com.google.gson.Gson;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.FileConfiguration;
 
 import codes.wilma24.Skype.api.v1_0_R1.gson.GsonBuilder;
 import codes.wilma24.Skype.api.v1_0_R1.socket.SocketHandlerContext;
-import codes.wilma24.Skype.api.v1_0_R1.sqlite.ConfigurationSection;
-import codes.wilma24.Skype.api.v1_0_R1.sqlite.FileConfiguration;
 import codes.wilma24.Skype.api.v1_0_R1.uuid.UUID;
 import codes.wilma24.Skype.server.v1_0_R1.Skype;
 import codes.wilma24.Skype.server.v1_0_R1.data.types.Connection;
+
+import com.google.gson.Gson;
 
 public class UserManager {
 
@@ -28,12 +30,7 @@ public class UserManager {
 
 	public Optional<String> getSkypeName(UUID participantId) {
 		if (config.contains("registry." + participantId.toString() + ".skypeName")) {
-			try {
-				return Optional.of(config.getString("registry." + participantId.toString() + ".skypeName"));
-			} catch (SQLException e) {
-				e.printStackTrace();
-				return Optional.empty();
-			}
+			return Optional.of(config.getString("registry." + participantId.toString() + ".skypeName"));
 		} else {
 			return Optional.empty();
 		}
@@ -47,12 +44,8 @@ public class UserManager {
 		password = ctx.getCryptographicContext().encodeToString(password.getBytes());
 		UUID participantId = getUniqueId(skypeName);
 		if (userExists(skypeName)) {
-			try {
-				if (password.equals(config.getString("registry." + participantId.toString() + ".password"))) {
-					return true;
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
+			if (password.equals(config.getString("registry." + participantId.toString() + ".password"))) {
+				return true;
 			}
 		}
 		return false;
@@ -73,30 +66,24 @@ public class UserManager {
 			boolean isGroupChat) {
 		password = ctx.getCryptographicContext().encodeToString(password.getBytes(StandardCharsets.UTF_8));
 		UUID participantId = getUniqueId(skypeName);
-		try {
+		if (!config.contains("registry." + participantId.toString() + ".skypeName")) {
 			config.set("registry." + participantId.toString() + ".password", password);
 			config.set("registry." + participantId.toString() + ".skypeName", skypeName);
 			config.set("registry." + participantId.toString() + ".isGroupChat", isGroupChat);
 			Skype.getPlugin().getConversationManager().addParticipants(participantId, participantId);
 			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} else {
+			return false;
 		}
-		return false;
 	}
 
 	public boolean removeUser(String skypeName) {
 		UUID participantId = getUniqueId(skypeName);
-		try {
-			config.set("registry." + participantId.toString() + ".password", null);
-			config.set("registry." + participantId.toString() + ".skypeName", null);
-			config.set("registry." + participantId.toString() + ".isGroupChat", null);
-			Skype.getPlugin().getConversationManager().removeParticipants(participantId);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
+		config.set("registry." + participantId.toString() + ".password", null);
+		config.set("registry." + participantId.toString() + ".skypeName", null);
+		config.set("registry." + participantId.toString() + ".isGroupChat", null);
+		Skype.getPlugin().getConversationManager().removeParticipants(participantId);
+		return true;
 	}
 
 	public boolean isGroupChat(String skypeName) {
@@ -276,27 +263,34 @@ public class UserManager {
 	private Map<String, ConfigurationSection> configByConversationId = new HashMap<>();
 
 	public ConfigurationSection getConfig(UUID conversationId) {
-		String key = "config_" + conversationId.toString() + ".db";
+		String key = "config_" + conversationId.toString() + ".yml";
 		if (configByConversationId.containsKey(key)) {
 			return configByConversationId.get(key);
 		} else {
-			ConfigurationSection section = null;
-			try {
-				section = new FileConfiguration(key).getConfigurationSection();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			codes.wilma24.Skype.api.v1_0_R1.bukkit.ConfigurationManager root = new codes.wilma24.Skype.api.v1_0_R1.bukkit.ConfigurationManager();
+	        root.setup(new File(key));
+	        ConfigurationSection section = root.getData();
 			configByConversationId.put(key, section);
+	        Thread thread = new Thread(() -> {
+	            while (true) {
+	                root.saveData();
+	                try {
+	                    Thread.sleep(20000L);
+	                }
+	                catch (Exception e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	        });
+	        thread.start();
 			return section;
 		}
 	}
 
 	public boolean setSpotifyCreds(UUID conversationId, String accessToken, String refreshToken) {
 		try {
-			config.replace("spotify." + conversationId.toString() + ".accessToken", accessToken);
-			config.replace("spotify." + conversationId.toString() + ".refreshToken", refreshToken);
+			config.set("spotify." + conversationId.toString() + ".accessToken", accessToken);
+			config.set("spotify." + conversationId.toString() + ".refreshToken", refreshToken);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -327,69 +321,54 @@ public class UserManager {
 	}
 
 	public boolean addContact(UUID conversationId, UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<String> list = new ArrayList<String>();
-			ConfigurationSection config = this.getConfig(conversationId);
-			if (config.contains("conversation." + conversationId.toString() + ".contacts")) {
-				String json = config.getString("conversation." + conversationId.toString() + ".contacts");
-				list = gson.fromJson(json, List.class);
-			}
-			for (UUID participant : participantIds) {
-				if (!list.contains(participant.toString())) {
-					list.add(participant.toString());
-				}
-			}
-			String json = gson.toJson(list);
-			config.replace("conversation." + conversationId.toString() + ".contacts", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<String> list = new ArrayList<String>();
+		ConfigurationSection config = this.getConfig(conversationId);
+		if (config.contains("conversation." + conversationId.toString() + ".contacts")) {
+			String json = config.getString("conversation." + conversationId.toString() + ".contacts");
+			list = gson.fromJson(json, List.class);
 		}
+		for (UUID participant : participantIds) {
+			if (!list.contains(participant.toString())) {
+				list.add(participant.toString());
+			}
+		}
+		String json = gson.toJson(list);
+		config.set("conversation." + conversationId.toString() + ".contacts", json);
+		return true;
 	}
 
 	public boolean removeContact(UUID conversationId, UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<String> list = new ArrayList<String>();
-			ConfigurationSection config = this.getConfig(conversationId);
-			if (config.contains("conversation." + conversationId.toString() + ".contacts")) {
-				String json = config.getString("conversation." + conversationId.toString() + ".contacts");
-				list = gson.fromJson(json, List.class);
-			}
-			for (UUID participant : participantIds) {
-				if (list.contains(participant.toString())) {
-					list.remove(participant.toString());
-				}
-			}
-			String json = gson.toJson(list);
-			config.replace("conversation." + conversationId.toString() + ".contacts", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<String> list = new ArrayList<String>();
+		ConfigurationSection config = this.getConfig(conversationId);
+		if (config.contains("conversation." + conversationId.toString() + ".contacts")) {
+			String json = config.getString("conversation." + conversationId.toString() + ".contacts");
+			list = gson.fromJson(json, List.class);
 		}
+		for (UUID participant : participantIds) {
+			if (list.contains(participant.toString())) {
+				list.remove(participant.toString());
+			}
+		}
+		String json = gson.toJson(list);
+		config.set("conversation." + conversationId.toString() + ".contacts", json);
+		return true;
 	}
 
 	public Optional<List<UUID>> getContacts(UUID conversationId) {
-		try {
-			List<String> list = new ArrayList<String>();
-			Gson gson = GsonBuilder.create();
-			ConfigurationSection config = this.getConfig(conversationId);
-			if (config.contains("conversation." + conversationId.toString() + ".contacts")) {
-				String json = config.getString("conversation." + conversationId.toString() + ".contacts");
-				list = gson.fromJson(json, List.class);
-			}
-			List<UUID> participants = new ArrayList<>();
-			for (String participant : list) {
-				participants.add(UUID.fromString(participant));
-			}
-			return Optional.of(participants);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		List<String> list = new ArrayList<String>();
+		Gson gson = GsonBuilder.create();
+		ConfigurationSection config = this.getConfig(conversationId);
+		if (config.contains("conversation." + conversationId.toString() + ".contacts")) {
+			String json = config.getString("conversation." + conversationId.toString() + ".contacts");
+			list = gson.fromJson(json, List.class);
 		}
-		return Optional.empty();
+		List<UUID> participants = new ArrayList<>();
+		for (String participant : list) {
+			participants.add(UUID.fromString(participant));
+		}
+		return Optional.of(participants);
 	}
 
 	public boolean hasContact(UUID conversationId, UUID participantId) {
@@ -405,65 +384,50 @@ public class UserManager {
 	}
 
 	public boolean addContactRequest(UUID conversationId, UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<String> list = new ArrayList<String>();
-			ConfigurationSection config = this.getConfig(conversationId);
-			if (config.contains("conversation." + conversationId.toString() + ".contactRequests")) {
-				String json = config.getString("conversation." + conversationId.toString() + ".contactRequests");
-				list = gson.fromJson(json, List.class);
-			}
-			for (UUID participant : participantIds) {
-				list.add(participant.toString());
-			}
-			String json = gson.toJson(list);
-			config.replace("conversation." + conversationId.toString() + ".contactRequests", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<String> list = new ArrayList<String>();
+		ConfigurationSection config = this.getConfig(conversationId);
+		if (config.contains("conversation." + conversationId.toString() + ".contactRequests")) {
+			String json = config.getString("conversation." + conversationId.toString() + ".contactRequests");
+			list = gson.fromJson(json, List.class);
 		}
+		for (UUID participant : participantIds) {
+			list.add(participant.toString());
+		}
+		String json = gson.toJson(list);
+		config.set("conversation." + conversationId.toString() + ".contactRequests", json);
+		return true;
 	}
 
 	public boolean removeContactRequest(UUID conversationId, UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<String> list = new ArrayList<String>();
-			ConfigurationSection config = this.getConfig(conversationId);
-			if (config.contains("conversation." + conversationId.toString() + ".contactRequests")) {
-				String json = config.getString("conversation." + conversationId.toString() + ".contactRequests");
-				list = gson.fromJson(json, List.class);
-			}
-			for (UUID participant : participantIds) {
-				list.remove(participant.toString());
-			}
-			String json = gson.toJson(list);
-			config.replace("conversation." + conversationId.toString() + ".contactRequests", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<String> list = new ArrayList<String>();
+		ConfigurationSection config = this.getConfig(conversationId);
+		if (config.contains("conversation." + conversationId.toString() + ".contactRequests")) {
+			String json = config.getString("conversation." + conversationId.toString() + ".contactRequests");
+			list = gson.fromJson(json, List.class);
 		}
+		for (UUID participant : participantIds) {
+			list.remove(participant.toString());
+		}
+		String json = gson.toJson(list);
+		config.set("conversation." + conversationId.toString() + ".contactRequests", json);
+		return true;
 	}
 
 	public Optional<List<UUID>> getContactRequests(UUID conversationId) {
-		try {
-			List<String> list = new ArrayList<String>();
-			Gson gson = GsonBuilder.create();
-			ConfigurationSection config = this.getConfig(conversationId);
-			if (config.contains("conversation." + conversationId.toString() + ".contactRequests")) {
-				String json = config.getString("conversation." + conversationId.toString() + ".contactRequests");
-				list = gson.fromJson(json, List.class);
-			}
-			List<UUID> participants = new ArrayList<>();
-			for (String participant : list) {
-				participants.add(UUID.fromString(participant));
-			}
-			return Optional.of(participants);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		List<String> list = new ArrayList<String>();
+		Gson gson = GsonBuilder.create();
+		ConfigurationSection config = this.getConfig(conversationId);
+		if (config.contains("conversation." + conversationId.toString() + ".contactRequests")) {
+			String json = config.getString("conversation." + conversationId.toString() + ".contactRequests");
+			list = gson.fromJson(json, List.class);
 		}
-		return Optional.empty();
+		List<UUID> participants = new ArrayList<>();
+		for (String participant : list) {
+			participants.add(UUID.fromString(participant));
+		}
+		return Optional.of(participants);
 	}
 
 	public boolean hasContactRequest(UUID conversationId, UUID participantId) {

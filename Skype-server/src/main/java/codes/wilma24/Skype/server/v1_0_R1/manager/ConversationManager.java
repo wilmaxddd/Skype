@@ -14,10 +14,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.FileConfiguration;
+
 import codes.wilma24.Skype.api.v1_0_R1.gson.GsonBuilder;
-import codes.wilma24.Skype.api.v1_0_R1.sqlite.ConfigurationSection;
-import codes.wilma24.Skype.api.v1_0_R1.sqlite.FileConfiguration;
 import codes.wilma24.Skype.api.v1_0_R1.uuid.UUID;
+import codes.wilma24.Skype.server.v1_0_R1.ConfigurationManager;
 
 import com.google.gson.Gson;
 
@@ -36,7 +38,7 @@ public class ConversationManager {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy_MM");
 		String key = "config_" + conversationId.toString() + "_"
 				+ participantId.toString() + "_" + format.format(timestamp)
-				+ ".db";
+				+ ".yml";
 		if (messageHistoryConfig.containsKey(key)) {
 			return messageHistoryConfig.get(key);
 		} else {
@@ -46,342 +48,248 @@ public class ConversationManager {
 					return null;
 				}
 			}
-			ConfigurationSection section = null;
-			try {
-				section = new FileConfiguration(key).getConfigurationSection();
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			codes.wilma24.Skype.api.v1_0_R1.bukkit.ConfigurationManager root = new codes.wilma24.Skype.api.v1_0_R1.bukkit.ConfigurationManager();
+	        root.setup(new File(key));
+	        ConfigurationSection section = root.getData();
 			messageHistoryConfig.put(key, section);
+	        Thread thread = new Thread(() -> {
+	            while (true) {
+	                root.saveData();
+	                try {
+	                    Thread.sleep(20000L);
+	                }
+	                catch (Exception e) {
+	                    e.printStackTrace();
+	                }
+	            }
+	        });
+	        thread.start();
 			return section;
 		}
 	}
 
 	public boolean addGroupChatAdmins(UUID conversationId,
 			UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<String> participants = new ArrayList<String>();
-			if (config.contains("conversation." + conversationId.toString()
-					+ ".groupChatAdmins")) {
-				String json = config.getString("conversation."
-						+ conversationId.toString() + ".groupChatAdmins");
-				participants = gson.fromJson(json, List.class);
-			}
-			for (UUID participant : participantIds) {
-				if (!participants.contains(participant.toString())) {
-					participants.add(participant.toString());
-				}
-			}
-			String json = gson.toJson(participants);
-			config.replace("conversation." + conversationId.toString()
-					+ ".groupChatAdmins", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<String> participants = new ArrayList<String>();
+		if (config.contains("conversation." + conversationId.toString()
+				+ ".groupChatAdmins")) {
+			String json = config.getString("conversation."
+					+ conversationId.toString() + ".groupChatAdmins");
+			participants = gson.fromJson(json, List.class);
 		}
+		for (UUID participant : participantIds) {
+			if (!participants.contains(participant.toString())) {
+				participants.add(participant.toString());
+			}
+		}
+		String json = gson.toJson(participants);
+		config.set("conversation." + conversationId.toString()
+				+ ".groupChatAdmins", json);
+		return true;
 	}
 
 	public boolean setGroupChatAdmins(UUID conversationId,
 			UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<UUID> participants = Arrays.asList(participantIds);
-			List<String> participants2 = new ArrayList<>();
-			for (UUID participant : participants) {
-				participants2.add(participant.toString());
-			}
-			String json = gson.toJson(participants2);
-			config.replace("conversation." + conversationId.toString()
-					+ ".groupChatAdmins", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<UUID> participants = Arrays.asList(participantIds);
+		List<String> participants2 = new ArrayList<>();
+		for (UUID participant : participants) {
+			participants2.add(participant.toString());
 		}
+		String json = gson.toJson(participants2);
+		config.set("conversation." + conversationId.toString()
+				+ ".groupChatAdmins", json);
+		return true;
 	}
 
 	public boolean removeGroupChatAdmins(UUID conversationId,
 			UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<String> participants = new ArrayList<String>();
-			if (config.contains("conversation." + conversationId.toString()
-					+ ".groupChatAdmins")) {
-				String json = config.getString("conversation."
-						+ conversationId.toString() + ".groupChatAdmins");
-				participants = gson.fromJson(json, List.class);
-			}
-			for (UUID participant : participantIds) {
-				participants.remove(participant.toString());
-			}
-			String json = gson.toJson(participants);
-			config.replace("conversation." + conversationId.toString()
-					+ ".groupChatAdmins", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<String> participants = new ArrayList<String>();
+		if (config.contains("conversation." + conversationId.toString()
+				+ ".groupChatAdmins")) {
+			String json = config.getString("conversation."
+					+ conversationId.toString() + ".groupChatAdmins");
+			participants = gson.fromJson(json, List.class);
 		}
+		for (UUID participant : participantIds) {
+			participants.remove(participant.toString());
+		}
+		String json = gson.toJson(participants);
+		config.set("conversation." + conversationId.toString()
+				+ ".groupChatAdmins", json);
+		return true;
 	}
 
 	public boolean removeGroupChatAdmins(UUID conversationId) {
-		try {
-			config.replace("conversation." + conversationId.toString()
-					+ ".groupChatAdmins", null);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
+		config.set("conversation." + conversationId.toString()
+				+ ".groupChatAdmins", null);
+		return true;
 	}
 
 	public Optional<List<UUID>> getGroupChatAdmins(UUID conversationId) {
-		try {
-			List<String> list = new ArrayList<String>();
-			Gson gson = GsonBuilder.create();
-			if (config.contains("conversation." + conversationId.toString()
-					+ ".groupChatAdmins")) {
-				String json = config.getString("conversation."
-						+ conversationId.toString() + ".groupChatAdmins");
-				list = gson.fromJson(json, List.class);
-			}
-			List<UUID> participantIds = new ArrayList<>();
-			for (String participant : list) {
-				participantIds.add(UUID.fromString(participant));
-			}
-			return Optional.of(participantIds);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		List<String> list = new ArrayList<String>();
+		Gson gson = GsonBuilder.create();
+		if (config.contains("conversation." + conversationId.toString()
+				+ ".groupChatAdmins")) {
+			String json = config.getString("conversation."
+					+ conversationId.toString() + ".groupChatAdmins");
+			list = gson.fromJson(json, List.class);
 		}
-		return Optional.empty();
+		List<UUID> participantIds = new ArrayList<>();
+		for (String participant : list) {
+			participantIds.add(UUID.fromString(participant));
+		}
+		return Optional.of(participantIds);
 	}
 
 	public boolean addParticipants(UUID conversationId, UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<String> participants = new ArrayList<String>();
-			List<String> historicParticipants = new ArrayList<String>();
-			if (config.contains("conversation." + conversationId.toString()
-					+ ".participants")) {
-				String json = config.getString("conversation."
-						+ conversationId.toString() + ".participants");
-				participants = gson.fromJson(json, List.class);
-			}
-			if (config.contains("conversation." + conversationId.toString()
-					+ ".historicParticipants")) {
-				String json = config.getString("conversation."
-						+ conversationId.toString() + ".historicParticipants");
-				historicParticipants = gson.fromJson(json, List.class);
-			}
-			for (UUID participant : participantIds) {
-				if (!participants.contains(participant.toString())) {
-					participants.add(participant.toString());
-				}
-				if (!historicParticipants.contains(participant.toString())) {
-					historicParticipants.add(participant.toString());
-				}
-			}
-			String json = gson.toJson(participants);
-			config.replace("conversation." + conversationId.toString()
-					+ ".participants", json);
-			config.replace("conversation." + conversationId.toString()
-					+ ".historicParticipants", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<String> participants = new ArrayList<String>();
+		List<String> historicParticipants = new ArrayList<String>();
+		if (config.contains("conversation." + conversationId.toString()
+				+ ".participants")) {
+			String json = config.getString("conversation."
+					+ conversationId.toString() + ".participants");
+			participants = gson.fromJson(json, List.class);
 		}
+		if (config.contains("conversation." + conversationId.toString()
+				+ ".historicParticipants")) {
+			String json = config.getString("conversation."
+					+ conversationId.toString() + ".historicParticipants");
+			historicParticipants = gson.fromJson(json, List.class);
+		}
+		for (UUID participant : participantIds) {
+			if (!participants.contains(participant.toString())) {
+				participants.add(participant.toString());
+			}
+			if (!historicParticipants.contains(participant.toString())) {
+				historicParticipants.add(participant.toString());
+			}
+		}
+		String json = gson.toJson(participants);
+		config.set("conversation." + conversationId.toString()
+				+ ".participants", json);
+		config.set("conversation." + conversationId.toString()
+				+ ".historicParticipants", json);
+		return true;
 	}
 
 	public boolean setParticipants(UUID conversationId, UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<UUID> participants = Arrays.asList(participantIds);
-			List<String> participants2 = new ArrayList<>();
-			for (UUID participant : participants) {
-				participants2.add(participant.toString());
-			}
-			String json = gson.toJson(participants2);
-			config.replace("conversation." + conversationId.toString()
-					+ ".participants", json);
-			config.replace("conversation." + conversationId.toString()
-					+ ".historicParticipants", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<UUID> participants = Arrays.asList(participantIds);
+		List<String> participants2 = new ArrayList<>();
+		for (UUID participant : participants) {
+			participants2.add(participant.toString());
 		}
+		String json = gson.toJson(participants2);
+		config.set("conversation." + conversationId.toString()
+				+ ".participants", json);
+		config.set("conversation." + conversationId.toString()
+				+ ".historicParticipants", json);
+		return true;
 	}
 
 	public boolean removeParticipants(UUID conversationId,
 			UUID... participantIds) {
-		try {
-			Gson gson = GsonBuilder.create();
-			List<String> participants = new ArrayList<String>();
-			if (config.contains("conversation." + conversationId.toString()
-					+ ".participants")) {
-				String json = config.getString("conversation."
-						+ conversationId.toString() + ".participants");
-				participants = gson.fromJson(json, List.class);
-			}
-			for (UUID participant : participantIds) {
-				participants.remove(participant.toString());
-			}
-			String json = gson.toJson(participants);
-			config.replace("conversation." + conversationId.toString()
-					+ ".participants", json);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
+		Gson gson = GsonBuilder.create();
+		List<String> participants = new ArrayList<String>();
+		if (config.contains("conversation." + conversationId.toString()
+				+ ".participants")) {
+			String json = config.getString("conversation."
+					+ conversationId.toString() + ".participants");
+			participants = gson.fromJson(json, List.class);
 		}
+		for (UUID participant : participantIds) {
+			participants.remove(participant.toString());
+		}
+		String json = gson.toJson(participants);
+		config.set("conversation." + conversationId.toString()
+				+ ".participants", json);
+		return true;
 	}
 
 	public boolean removeParticipants(UUID conversationId) {
-		try {
-			config.replace("conversation." + conversationId.toString()
-					+ ".participants", null);
-			config.replace("conversation." + conversationId.toString()
-					+ ".historicParticipants", null);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
+		config.set("conversation." + conversationId.toString()
+				+ ".participants", null);
+		config.set("conversation." + conversationId.toString()
+				+ ".historicParticipants", null);
+		return true;
 	}
 
 	public Optional<List<UUID>> getParticipants(UUID conversationId) {
-		try {
-			List<String> list = new ArrayList<String>();
-			Gson gson = GsonBuilder.create();
-			if (config.contains("conversation." + conversationId.toString()
-					+ ".participants")) {
-				String json = config.getString("conversation."
-						+ conversationId.toString() + ".participants");
-				list = gson.fromJson(json, List.class);
-			}
-			List<UUID> participantIds = new ArrayList<>();
-			for (String participant : list) {
-				participantIds.add(UUID.fromString(participant));
-			}
-			return Optional.of(participantIds);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		List<String> list = new ArrayList<String>();
+		Gson gson = GsonBuilder.create();
+		if (config.contains("conversation." + conversationId.toString()
+				+ ".participants")) {
+			String json = config.getString("conversation."
+					+ conversationId.toString() + ".participants");
+			list = gson.fromJson(json, List.class);
 		}
-		return Optional.empty();
+		List<UUID> participantIds = new ArrayList<>();
+		for (String participant : list) {
+			participantIds.add(UUID.fromString(participant));
+		}
+		return Optional.of(participantIds);
 	}
 
 	public Optional<List<UUID>> getHistoricParticipants(UUID conversationId) {
-		try {
-			List<String> list = new ArrayList<String>();
-			Gson gson = GsonBuilder.create();
-			if (config.contains("conversation." + conversationId.toString()
-					+ ".historicParticipants")) {
-				String json = config.getString("conversation."
-						+ conversationId.toString() + ".historicParticipants");
-				list = gson.fromJson(json, List.class);
-			}
-			List<UUID> participantIds = new ArrayList<>();
-			for (String participant : list) {
-				participantIds.add(UUID.fromString(participant));
-			}
-			return Optional.of(participantIds);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		List<String> list = new ArrayList<String>();
+		Gson gson = GsonBuilder.create();
+		if (config.contains("conversation." + conversationId.toString()
+				+ ".historicParticipants")) {
+			String json = config.getString("conversation."
+					+ conversationId.toString() + ".historicParticipants");
+			list = gson.fromJson(json, List.class);
 		}
-		return Optional.empty();
+		List<UUID> participantIds = new ArrayList<>();
+		for (String participant : list) {
+			participantIds.add(UUID.fromString(participant));
+		}
+		return Optional.of(participantIds);
 	}
 
 	public Optional<Object> lookupConversation(UUID conversationId) {
-		ConfigurationSection config = this.config
-				.getConfigurationSection("conversation."
-						+ conversationId.toString());
-		try {
-			String payload = config.getString("payload");
-			if (payload == null) {
-				return Optional.empty();
-			}
-			return Optional.of(payload);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (this.config.contains("conversation." + conversationId.toString() + ".payload")) {
+			return Optional.of(this.config.getString("conversation." + conversationId.toString() + ".payload"));
+		} else {
+			return Optional.empty();
 		}
-		return Optional.empty();
 	}
 
 	public Optional<Object> lookupVoipContacts(UUID conversationId) {
-		ConfigurationSection config = this.config
-				.getConfigurationSection("voipContacts."
-						+ conversationId.toString());
-		try {
-			String payload = config.getString("payload");
-			if (payload == null) {
-				return Optional.empty();
-			}
-			return Optional.of(payload);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (this.config.contains("voipContacts." + conversationId.toString() + ".payload")) {
+			return Optional.of(this.config.getString("voipContacts." + conversationId.toString() + ".payload"));
+		} else {
+			return Optional.empty();
 		}
-		return Optional.empty();
 	}
 
 	public boolean updateConversation(UUID conversationId, Object payload) {
-		ConfigurationSection config = this.config
-				.getConfigurationSection("conversation."
-						+ conversationId.toString());
-		try {
-			config.replace("payload", payload.toString());
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
+		config.set("conversation." + conversationId.toString() + ".payload", payload.toString());
+		return true;
 	}
 
 	public boolean updateVoipContacts(UUID conversationId, Object payload) {
-		ConfigurationSection config = this.config
-				.getConfigurationSection("voipContacts."
-						+ conversationId.toString());
-		try {
-			config.replace("payload", payload.toString());
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
+		config.set("voipContacts." + conversationId.toString() + ".payload", payload.toString());
+		return true;
 	}
 
 	public boolean setLastAccessed(UUID conversationId, UUID participantId,
 			long lastRead) {
-		ConfigurationSection config = this.config
-				.getConfigurationSection("lastAccessed."
-						+ conversationId.toString() + "."
-						+ participantId.toString());
-		try {
-			config.replace("payload", lastRead);
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;
+		config.set("lastAccessed." + conversationId.toString() + "." + participantId.toString() + ".payload", lastRead);
+		return true;
 	}
 
 	public long getLastAccessed(UUID conversationId, UUID participantId) {
-		ConfigurationSection config = this.config
-				.getConfigurationSection("lastAccessed."
-						+ conversationId.toString() + "."
-						+ participantId.toString());
-		try {
-			long lastRead = config.getLong("payload",
+		if (this.config.contains("lastAccessed." + conversationId.toString() + "." + participantId.toString() + ".payload")) {
+			long lastRead = config.getLong("lastAccessed." + conversationId.toString() + "." + participantId.toString() + ".payload",
 					System.currentTimeMillis());
 			return lastRead;
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} else {
+			return System.currentTimeMillis();
 		}
-		return System.currentTimeMillis();
 	}
 
 	public LocalDate asLocalDate(Date date) {
@@ -405,18 +313,18 @@ public class ConversationManager {
 				continue;
 			}
 			section = section.getConfigurationSection("messages");
+			if (section == null) {
+				continue;
+			}
 			for (String key : section.getKeys(false)) {
-				try {
-					String payload = section.getString(key + ".payload");
-					if (payload == null) {
-						continue;
-					}
-					long timestamp = section.getLong(key + ".timestamp");
-					Date date = new Date(timestamp);
-					if (to.after(date) && from.before(date)) {
-						messages.add(payload);
-					}
-				} catch (SQLException e) {
+				String payload = section.getString(key + ".payload");
+				if (payload == null) {
+					continue;
+				}
+				long timestamp = section.getLong(key + ".timestamp");
+				Date date = new Date(timestamp);
+				if (to.after(date) && from.before(date)) {
+					messages.add(payload);
 				}
 			}
 		} while (!start.isAfter(end));
@@ -438,44 +346,32 @@ public class ConversationManager {
 
 	public Optional<String> lookupMessage(UUID conversationId,
 			UUID participantId, UUID messageId, long timestamp) {
-		try {
-			Date date = new Date(timestamp);
-			ConfigurationSection section = this.getConfig(conversationId,
-					participantId, date, true);
-			if (section == null) {
-				return Optional.empty();
-			}
-			section = section.getConfigurationSection("messages");
-			section = section.getConfigurationSection(messageId.toString());
-			String payload;
-			if ((payload = section.getString("payload")) == null) {
-				return Optional.empty();
-			}
-			return Optional.of(payload);
-		} catch (SQLException e) {
+		Date date = new Date(timestamp);
+		ConfigurationSection section = this.getConfig(conversationId,
+				participantId, date, true);
+		if (section == null) {
 			return Optional.empty();
 		}
+		String payload;
+		if ((payload = section.getString("messages." + messageId.toString() + ".payload", null)) == null) {
+			return Optional.empty();
+		}
+		return Optional.of(payload);
 	}
 
 	public boolean addMessage(UUID conversationId, UUID participantId,
 			UUID messageId, Object payload, long timestamp) {
-		try {
-			Date date = new Date(timestamp);
-			ConfigurationSection section = this.getConfig(conversationId,
-					participantId, date, false).getConfigurationSection(
-					"messages");
-			section = section.getConfigurationSection(messageId.toString());
-			if (payload == null) {
-				section.replace("payload", null);
-				section.replace("timestamp", null);
-			} else {
-				section.replace("payload", payload.toString());
-				section.replace("timestamp", timestamp);
-			}
-			return true;
-		} catch (SQLException e) {
-			return false;
+		Date date = new Date(timestamp);
+		ConfigurationSection section = this.getConfig(conversationId,
+				participantId, date, false);
+		if (payload == null) {
+			section.set("messages." + messageId.toString() + ".payload", null);
+			section.set("messages." + messageId.toString() + ".timestamp", null);
+		} else {
+			section.set("messages." + messageId.toString() + ".payload", payload.toString());
+			section.set("messages." + messageId.toString() + ".timestamp", timestamp);
 		}
+		return true;
 	}
 
 }
