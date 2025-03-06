@@ -1,0 +1,1791 @@
+﻿
+[Header]
+ProjectFileVersion = 1.1
+[General]
+Program name = Skype™ 7.11
+Program version = 7.11.102
+Windows XP = 0
+Windows Server 2003 = 1
+Windows Vista = 0
+Windows Server 2008 = 1
+Windows 7 = 1
+Windows 8 = 1
+Windows 10 = 1
+Windows Server 2016 = 1
+Windows Server 2019 = 1
+Windows Server 2022 = 1
+Windows 11 = 1
+DoNotCheckOS = 1
+Company name = Skype Technologies S.A.
+Website = https://wilma24.codes
+SFA = 0
+DFA = 0
+Comp = 1
+[Graphics]
+Wizard image = <main>
+Header image = <main>
+Show Label = 1
+VisualStylesEnabled = 1
+[Files]
+Installation path = <ApplicationData>\<Company>\<AppName>\
+Autcip = 1
+[Uninstall]
+Vwau = 0
+Website = https://
+Include uninstaller = 1
+Uninstaller filename = Uninstall Skype™ 7.11
+UseCustomDisplayIcon = 0
+CustomDisplayIcon = <InstallPath>\
+[Licence]
+Licence dialog = 1
+[Finish]
+Sart program = 1
+Reboot computer = 0
+Program = <InstallPath>\Skype.exe
+ProgramArguments = 
+[Shortcuts]
+Allowtc = 0
+Shortcut path = <Company>\<AppName>
+[Serialoptions]
+Allows = 0
+Number = 1000
+Mask = #####-#####-#####-#####
+[SplashScreen]
+Image = 
+Sound = 
+Time = 2
+PlaySound = 0
+Allow = 0
+[Build]
+File = C:\Users\wilma\workspace\Skype\dwqwwqw.exe
+SetupIconPath = ..\icons\ancient.ico
+UninstallIconPath = ..\icons\ancient.ico
+CompressionMethod = 1
+CompressionLevel = 2
+[Updater]
+Allow = 0
+1 = <AppName>
+2 = <AppVersion>
+3 = http://
+4 = http://
+5 = http://
+6 = Update
+Language = 0
+RunProg = 
+RunProgs = 0
+Execdlls = 0
+[Languages]
+[Files/Dirs]
+C:\Users\wilma\workspace\Skype\Skype-bootstrap\target\Skype-bootstrap-1.2-SNAPSHOT.jar
+3.4 KB
+jar
+C:\Users\wilma\workspace\Skype\Skype.exe
+203 KB
+exe
+C:\Users\wilma\workspace\Skype\Skype-updater\target\Skype-updater-1.2-SNAPSHOT.jar
+3.3 MB
+jar
+C:\Users\wilma\workspace\Skype\Skype\target\Skype-1.2-SNAPSHOT.jar
+40.6 MB
+jar
+C:\Program Files (x86)\Cynthia\jre8\
+N/A
+[Folder]
+C:\Users\wilma\workspace\Skype\Skype\SkypeChatExporter.exe
+58 KB
+exe
+C:\Users\wilma\workspace\Skype\Skype\System.Data.SQLite.dll
+1.3 MB
+dll
+[Licence_Begin]
+38267
+{\rtf1\ansi\ansicpg1252\deff0\deflang1031{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Msftedit 5.41.21.2510;}\viewkind4\uc1\pard\fs20                     GNU AFFERO GENERAL PUBLIC LICENSE\par
+                       Version 3, 19 November 2007\par
+\par
+ Copyright (C) 2007 Free Software Foundation, Inc. <{\field{\*\fldinst{HYPERLINK "http://fsf.org/"}}{\fldrslt{\ul\cf1 http://fsf.org/}}}\f0\fs20 >\par
+ Everyone is permitted to copy and distribute verbatim copies\par
+ of this license document, but changing it is not allowed.\par
+\par
+                            Preamble\par
+\par
+  The GNU Affero General Public License is a free, copyleft license for\par
+software and other kinds of works, specifically designed to ensure\par
+cooperation with the community in the case of network server software.\par
+\par
+  The licenses for most software and other practical works are designed\par
+to take away your freedom to share and change the works.  By contrast,\par
+our General Public Licenses are intended to guarantee your freedom to\par
+share and change all versions of a program--to make sure it remains free\par
+software for all its users.\par
+\par
+  When we speak of free software, we are referring to freedom, not\par
+price.  Our General Public Licenses are designed to make sure that you\par
+have the freedom to distribute copies of free software (and charge for\par
+them if you wish), that you receive source code or can get it if you\par
+want it, that you can change the software or use pieces of it in new\par
+free programs, and that you know you can do these things.\par
+\par
+  Developers that use our General Public Licenses protect your rights\par
+with two steps: (1) assert copyright on the software, and (2) offer\par
+you this License which gives you legal permission to copy, distribute\par
+and/or modify the software.\par
+\par
+  A secondary benefit of defending all users' freedom is that\par
+improvements made in alternate versions of the program, if they\par
+receive widespread use, become available for other developers to\par
+incorporate.  Many developers of free software are heartened and\par
+encouraged by the resulting cooperation.  However, in the case of\par
+software used on network servers, this result may fail to come about.\par
+The GNU General Public License permits making a modified version and\par
+letting the public access it on a server without ever releasing its\par
+source code to the public.\par
+\par
+  The GNU Affero General Public License is designed specifically to\par
+ensure that, in such cases, the modified source code becomes available\par
+to the community.  It requires the operator of a network server to\par
+provide the source code of the modified version running there to the\par
+users of that server.  Therefore, public use of a modified version, on\par
+a publicly accessible server, gives the public access to the source\par
+code of the modified version.\par
+\par
+  An older license, called the Affero General Public License and\par
+published by Affero, was designed to accomplish similar goals.  This is\par
+a different license, not a version of the Affero GPL, but Affero has\par
+released a new version of the Affero GPL which permits relicensing under\par
+this license.\par
+\par
+  The precise terms and conditions for copying, distribution and\par
+modification follow.\par
+\par
+                       TERMS AND CONDITIONS\par
+\par
+  0. Definitions.\par
+\par
+  "This License" refers to version 3 of the GNU Affero General Public License.\par
+\par
+  "Copyright" also means copyright-like laws that apply to other kinds of\par
+works, such as semiconductor masks.\par
+\par
+  "The Program" refers to any copyrightable work licensed under this\par
+License.  Each licensee is addressed as "you".  "Licensees" and\par
+"recipients" may be individuals or organizations.\par
+\par
+  To "modify" a work means to copy from or adapt all or part of the work\par
+in a fashion requiring copyright permission, other than the making of an\par
+exact copy.  The resulting work is called a "modified version" of the\par
+earlier work or a work "based on" the earlier work.\par
+\par
+  A "covered work" means either the unmodified Program or a work based\par
+on the Program.\par
+\par
+  To "propagate" a work means to do anything with it that, without\par
+permission, would make you directly or secondarily liable for\par
+infringement under applicable copyright law, except executing it on a\par
+computer or modifying a private copy.  Propagation includes copying,\par
+distribution (with or without modification), making available to the\par
+public, and in some countries other activities as well.\par
+\par
+  To "convey" a work means any kind of propagation that enables other\par
+parties to make or receive copies.  Mere interaction with a user through\par
+a computer network, with no transfer of a copy, is not conveying.\par
+\par
+  An interactive user interface displays "Appropriate Legal Notices"\par
+to the extent that it includes a convenient and prominently visible\par
+feature that (1) displays an appropriate copyright notice, and (2)\par
+tells the user that there is no warranty for the work (except to the\par
+extent that warranties are provided), that licensees may convey the\par
+work under this License, and how to view a copy of this License.  If\par
+the interface presents a list of user commands or options, such as a\par
+menu, a prominent item in the list meets this criterion.\par
+\par
+  1. Source Code.\par
+\par
+  The "source code" for a work means the preferred form of the work\par
+for making modifications to it.  "Object code" means any non-source\par
+form of a work.\par
+\par
+  A "Standard Interface" means an interface that either is an official\par
+standard defined by a recognized standards body, or, in the case of\par
+interfaces specified for a particular programming language, one that\par
+is widely used among developers working in that language.\par
+\par
+  The "System Libraries" of an executable work include anything, other\par
+than the work as a whole, that (a) is included in the normal form of\par
+packaging a Major Component, but which is not part of that Major\par
+Component, and (b) serves only to enable use of the work with that\par
+Major Component, or to implement a Standard Interface for which an\par
+implementation is available to the public in source code form.  A\par
+"Major Component", in this context, means a major essential component\par
+(kernel, window system, and so on) of the specific operating system\par
+(if any) on which the executable work runs, or a compiler used to\par
+produce the work, or an object code interpreter used to run it.\par
+\par
+  The "Corresponding Source" for a work in object code form means all\par
+the source code needed to generate, install, and (for an executable\par
+work) run the object code and to modify the work, including scripts to\par
+control those activities.  However, it does not include the work's\par
+System Libraries, or general-purpose tools or generally available free\par
+programs which are used unmodified in performing those activities but\par
+which are not part of the work.  For example, Corresponding Source\par
+includes interface definition files associated with source files for\par
+the work, and the source code for shared libraries and dynamically\par
+linked subprograms that the work is specifically designed to require,\par
+such as by intimate data communication or control flow between those\par
+subprograms and other parts of the work.\par
+\par
+  The Corresponding Source need not include anything that users\par
+can regenerate automatically from other parts of the Corresponding\par
+Source.\par
+\par
+  The Corresponding Source for a work in source code form is that\par
+same work.\par
+\par
+  2. Basic Permissions.\par
+\par
+  All rights granted under this License are granted for the term of\par
+copyright on the Program, and are irrevocable provided the stated\par
+conditions are met.  This License explicitly affirms your unlimited\par
+permission to run the unmodified Program.  The output from running a\par
+covered work is covered by this License only if the output, given its\par
+content, constitutes a covered work.  This License acknowledges your\par
+rights of fair use or other equivalent, as provided by copyright law.\par
+\par
+  You may make, run and propagate covered works that you do not\par
+convey, without conditions so long as your license otherwise remains\par
+in force.  You may convey covered works to others for the sole purpose\par
+of having them make modifications exclusively for you, or provide you\par
+with facilities for running those works, provided that you comply with\par
+the terms of this License in conveying all material for which you do\par
+not control copyright.  Those thus making or running the covered works\par
+for you must do so exclusively on your behalf, under your direction\par
+and control, on terms that prohibit them from making any copies of\par
+your copyrighted material outside their relationship with you.\par
+\par
+  Conveying under any other circumstances is permitted solely under\par
+the conditions stated below.  Sublicensing is not allowed; section 10\par
+makes it unnecessary.\par
+\par
+  3. Protecting Users' Legal Rights From Anti-Circumvention Law.\par
+\par
+  No covered work shall be deemed part of an effective technological\par
+measure under any applicable law fulfilling obligations under article\par
+11 of the WIPO copyright treaty adopted on 20 December 1996, or\par
+similar laws prohibiting or restricting circumvention of such\par
+measures.\par
+\par
+  When you convey a covered work, you waive any legal power to forbid\par
+circumvention of technological measures to the extent such circumvention\par
+is effected by exercising rights under this License with respect to\par
+the covered work, and you disclaim any intention to limit operation or\par
+modification of the work as a means of enforcing, against the work's\par
+users, your or third parties' legal rights to forbid circumvention of\par
+technological measures.\par
+\par
+  4. Conveying Verbatim Copies.\par
+\par
+  You may convey verbatim copies of the Program's source code as you\par
+receive it, in any medium, provided that you conspicuously and\par
+appropriately publish on each copy an appropriate copyright notice;\par
+keep intact all notices stating that this License and any\par
+non-permissive terms added in accord with section 7 apply to the code;\par
+keep intact all notices of the absence of any warranty; and give all\par
+recipients a copy of this License along with the Program.\par
+\par
+  You may charge any price or no price for each copy that you convey,\par
+and you may offer support or warranty protection for a fee.\par
+\par
+  5. Conveying Modified Source Versions.\par
+\par
+  You may convey a work based on the Program, or the modifications to\par
+produce it from the Program, in the form of source code under the\par
+terms of section 4, provided that you also meet all of these conditions:\par
+\par
+    a) The work must carry prominent notices stating that you modified\par
+    it, and giving a relevant date.\par
+\par
+    b) The work must carry prominent notices stating that it is\par
+    released under this License and any conditions added under section\par
+    7.  This requirement modifies the requirement in section 4 to\par
+    "keep intact all notices".\par
+\par
+    c) You must license the entire work, as a whole, under this\par
+    License to anyone who comes into possession of a copy.  This\par
+    License will therefore apply, along with any applicable section 7\par
+    additional terms, to the whole of the work, and all its parts,\par
+    regardless of how they are packaged.  This License gives no\par
+    permission to license the work in any other way, but it does not\par
+    invalidate such permission if you have separately received it.\par
+\par
+    d) If the work has interactive user interfaces, each must display\par
+    Appropriate Legal Notices; however, if the Program has interactive\par
+    interfaces that do not display Appropriate Legal Notices, your\par
+    work need not make them do so.\par
+\par
+  A compilation of a covered work with other separate and independent\par
+works, which are not by their nature extensions of the covered work,\par
+and which are not combined with it such as to form a larger program,\par
+in or on a volume of a storage or distribution medium, is called an\par
+"aggregate" if the compilation and its resulting copyright are not\par
+used to limit the access or legal rights of the compilation's users\par
+beyond what the individual works permit.  Inclusion of a covered work\par
+in an aggregate does not cause this License to apply to the other\par
+parts of the aggregate.\par
+\par
+  6. Conveying Non-Source Forms.\par
+\par
+  You may convey a covered work in object code form under the terms\par
+of sections 4 and 5, provided that you also convey the\par
+machine-readable Corresponding Source under the terms of this License,\par
+in one of these ways:\par
+\par
+    a) Convey the object code in, or embodied in, a physical product\par
+    (including a physical distribution medium), accompanied by the\par
+    Corresponding Source fixed on a durable physical medium\par
+    customarily used for software interchange.\par
+\par
+    b) Convey the object code in, or embodied in, a physical product\par
+    (including a physical distribution medium), accompanied by a\par
+    written offer, valid for at least three years and valid for as\par
+    long as you offer spare parts or customer support for that product\par
+    model, to give anyone who possesses the object code either (1) a\par
+    copy of the Corresponding Source for all the software in the\par
+    product that is covered by this License, on a durable physical\par
+    medium customarily used for software interchange, for a price no\par
+    more than your reasonable cost of physically performing this\par
+    conveying of source, or (2) access to copy the\par
+    Corresponding Source from a network server at no charge.\par
+\par
+    c) Convey individual copies of the object code with a copy of the\par
+    written offer to provide the Corresponding Source.  This\par
+    alternative is allowed only occasionally and noncommercially, and\par
+    only if you received the object code with such an offer, in accord\par
+    with subsection 6b.\par
+\par
+    d) Convey the object code by offering access from a designated\par
+    place (gratis or for a charge), and offer equivalent access to the\par
+    Corresponding Source in the same way through the same place at no\par
+    further charge.  You need not require recipients to copy the\par
+    Corresponding Source along with the object code.  If the place to\par
+    copy the object code is a network server, the Corresponding Source\par
+    may be on a different server (operated by you or a third party)\par
+    that supports equivalent copying facilities, provided you maintain\par
+    clear directions next to the object code saying where to find the\par
+    Corresponding Source.  Regardless of what server hosts the\par
+    Corresponding Source, you remain obligated to ensure that it is\par
+    available for as long as needed to satisfy these requirements.\par
+\par
+    e) Convey the object code using peer-to-peer transmission, provided\par
+    you inform other peers where the object code and Corresponding\par
+    Source of the work are being offered to the general public at no\par
+    charge under subsection 6d.\par
+\par
+  A separable portion of the object code, whose source code is excluded\par
+from the Corresponding Source as a System Library, need not be\par
+included in conveying the object code work.\par
+\par
+  A "User Product" is either (1) a "consumer product", which means any\par
+tangible personal property which is normally used for personal, family,\par
+or household purposes, or (2) anything designed or sold for incorporation\par
+into a dwelling.  In determining whether a product is a consumer product,\par
+doubtful cases shall be resolved in favor of coverage.  For a particular\par
+product received by a particular user, "normally used" refers to a\par
+typical or common use of that class of product, regardless of the status\par
+of the particular user or of the way in which the particular user\par
+actually uses, or expects or is expected to use, the product.  A product\par
+is a consumer product regardless of whether the product has substantial\par
+commercial, industrial or non-consumer uses, unless such uses represent\par
+the only significant mode of use of the product.\par
+\par
+  "Installation Information" for a User Product means any methods,\par
+procedures, authorization keys, or other information required to install\par
+and execute modified versions of a covered work in that User Product from\par
+a modified version of its Corresponding Source.  The information must\par
+suffice to ensure that the continued functioning of the modified object\par
+code is in no case prevented or interfered with solely because\par
+modification has been made.\par
+\par
+  If you convey an object code work under this section in, or with, or\par
+specifically for use in, a User Product, and the conveying occurs as\par
+part of a transaction in which the right of possession and use of the\par
+User Product is transferred to the recipient in perpetuity or for a\par
+fixed term (regardless of how the transaction is characterized), the\par
+Corresponding Source conveyed under this section must be accompanied\par
+by the Installation Information.  But this requirement does not apply\par
+if neither you nor any third party retains the ability to install\par
+modified object code on the User Product (for example, the work has\par
+been installed in ROM).\par
+\par
+  The requirement to provide Installation Information does not include a\par
+requirement to continue to provide support service, warranty, or updates\par
+for a work that has been modified or installed by the recipient, or for\par
+the User Product in which it has been modified or installed.  Access to a\par
+network may be denied when the modification itself materially and\par
+adversely affects the operation of the network or violates the rules and\par
+protocols for communication across the network.\par
+\par
+  Corresponding Source conveyed, and Installation Information provided,\par
+in accord with this section must be in a format that is publicly\par
+documented (and with an implementation available to the public in\par
+source code form), and must require no special password or key for\par
+unpacking, reading or copying.\par
+\par
+  7. Additional Terms.\par
+\par
+  "Additional permissions" are terms that supplement the terms of this\par
+License by making exceptions from one or more of its conditions.\par
+Additional permissions that are applicable to the entire Program shall\par
+be treated as though they were included in this License, to the extent\par
+that they are valid under applicable law.  If additional permissions\par
+apply only to part of the Program, that part may be used separately\par
+under those permissions, but the entire Program remains governed by\par
+this License without regard to the additional permissions.\par
+\par
+  When you convey a copy of a covered work, you may at your option\par
+remove any additional permissions from that copy, or from any part of\par
+it.  (Additional permissions may be written to require their own\par
+removal in certain cases when you modify the work.)  You may place\par
+additional permissions on material, added by you to a covered work,\par
+for which you have or can give appropriate copyright permission.\par
+\par
+  Notwithstanding any other provision of this License, for material you\par
+add to a covered work, you may (if authorized by the copyright holders of\par
+that material) supplement the terms of this License with terms:\par
+\par
+    a) Disclaiming warranty or limiting liability differently from the\par
+    terms of sections 15 and 16 of this License; or\par
+\par
+    b) Requiring preservation of specified reasonable legal notices or\par
+    author attributions in that material or in the Appropriate Legal\par
+    Notices displayed by works containing it; or\par
+\par
+    c) Prohibiting misrepresentation of the origin of that material, or\par
+    requiring that modified versions of such material be marked in\par
+    reasonable ways as different from the original version; or\par
+\par
+    d) Limiting the use for publicity purposes of names of licensors or\par
+    authors of the material; or\par
+\par
+    e) Declining to grant rights under trademark law for use of some\par
+    trade names, trademarks, or service marks; or\par
+\par
+    f) Requiring indemnification of licensors and authors of that\par
+    material by anyone who conveys the material (or modified versions of\par
+    it) with contractual assumptions of liability to the recipient, for\par
+    any liability that these contractual assumptions directly impose on\par
+    those licensors and authors.\par
+\par
+  All other non-permissive additional terms are considered "further\par
+restrictions" within the meaning of section 10.  If the Program as you\par
+received it, or any part of it, contains a notice stating that it is\par
+governed by this License along with a term that is a further\par
+restriction, you may remove that term.  If a license document contains\par
+a further restriction but permits relicensing or conveying under this\par
+License, you may add to a covered work material governed by the terms\par
+of that license document, provided that the further restriction does\par
+not survive such relicensing or conveying.\par
+\par
+  If you add terms to a covered work in accord with this section, you\par
+must place, in the relevant source files, a statement of the\par
+additional terms that apply to those files, or a notice indicating\par
+where to find the applicable terms.\par
+\par
+  Additional terms, permissive or non-permissive, may be stated in the\par
+form of a separately written license, or stated as exceptions;\par
+the above requirements apply either way.\par
+\par
+  8. Termination.\par
+\par
+  You may not propagate or modify a covered work except as expressly\par
+provided under this License.  Any attempt otherwise to propagate or\par
+modify it is void, and will automatically terminate your rights under\par
+this License (including any patent licenses granted under the third\par
+paragraph of section 11).\par
+\par
+  However, if you cease all violation of this License, then your\par
+license from a particular copyright holder is reinstated (a)\par
+provisionally, unless and until the copyright holder explicitly and\par
+finally terminates your license, and (b) permanently, if the copyright\par
+holder fails to notify you of the violation by some reasonable means\par
+prior to 60 days after the cessation.\par
+\par
+  Moreover, your license from a particular copyright holder is\par
+reinstated permanently if the copyright holder notifies you of the\par
+violation by some reasonable means, this is the first time you have\par
+received notice of violation of this License (for any work) from that\par
+copyright holder, and you cure the violation prior to 30 days after\par
+your receipt of the notice.\par
+\par
+  Termination of your rights under this section does not terminate the\par
+licenses of parties who have received copies or rights from you under\par
+this License.  If your rights have been terminated and not permanently\par
+reinstated, you do not qualify to receive new licenses for the same\par
+material under section 10.\par
+\par
+  9. Acceptance Not Required for Having Copies.\par
+\par
+  You are not required to accept this License in order to receive or\par
+run a copy of the Program.  Ancillary propagation of a covered work\par
+occurring solely as a consequence of using peer-to-peer transmission\par
+to receive a copy likewise does not require acceptance.  However,\par
+nothing other than this License grants you permission to propagate or\par
+modify any covered work.  These actions infringe copyright if you do\par
+not accept this License.  Therefore, by modifying or propagating a\par
+covered work, you indicate your acceptance of this License to do so.\par
+\par
+  10. Automatic Licensing of Downstream Recipients.\par
+\par
+  Each time you convey a covered work, the recipient automatically\par
+receives a license from the original licensors, to run, modify and\par
+propagate that work, subject to this License.  You are not responsible\par
+for enforcing compliance by third parties with this License.\par
+\par
+  An "entity transaction" is a transaction transferring control of an\par
+organization, or substantially all assets of one, or subdividing an\par
+organization, or merging organizations.  If propagation of a covered\par
+work results from an entity transaction, each party to that\par
+transaction who receives a copy of the work also receives whatever\par
+licenses to the work the party's predecessor in interest had or could\par
+give under the previous paragraph, plus a right to possession of the\par
+Corresponding Source of the work from the predecessor in interest, if\par
+the predecessor has it or can get it with reasonable efforts.\par
+\par
+  You may not impose any further restrictions on the exercise of the\par
+rights granted or affirmed under this License.  For example, you may\par
+not impose a license fee, royalty, or other charge for exercise of\par
+rights granted under this License, and you may not initiate litigation\par
+(including a cross-claim or counterclaim in a lawsuit) alleging that\par
+any patent claim is infringed by making, using, selling, offering for\par
+sale, or importing the Program or any portion of it.\par
+\par
+  11. Patents.\par
+\par
+  A "contributor" is a copyright holder who authorizes use under this\par
+License of the Program or a work on which the Program is based.  The\par
+work thus licensed is called the contributor's "contributor version".\par
+\par
+  A contributor's "essential patent claims" are all patent claims\par
+owned or controlled by the contributor, whether already acquired or\par
+hereafter acquired, that would be infringed by some manner, permitted\par
+by this License, of making, using, or selling its contributor version,\par
+but do not include claims that would be infringed only as a\par
+consequence of further modification of the contributor version.  For\par
+purposes of this definition, "control" includes the right to grant\par
+patent sublicenses in a manner consistent with the requirements of\par
+this License.\par
+\par
+  Each contributor grants you a non-exclusive, worldwide, royalty-free\par
+patent license under the contributor's essential patent claims, to\par
+make, use, sell, offer for sale, import and otherwise run, modify and\par
+propagate the contents of its contributor version.\par
+\par
+  In the following three paragraphs, a "patent license" is any express\par
+agreement or commitment, however denominated, not to enforce a patent\par
+(such as an express permission to practice a patent or covenant not to\par
+sue for patent infringement).  To "grant" such a patent license to a\par
+party means to make such an agreement or commitment not to enforce a\par
+patent against the party.\par
+\par
+  If you convey a covered work, knowingly relying on a patent license,\par
+and the Corresponding Source of the work is not available for anyone\par
+to copy, free of charge and under the terms of this License, through a\par
+publicly available network server or other readily accessible means,\par
+then you must either (1) cause the Corresponding Source to be so\par
+available, or (2) arrange to deprive yourself of the benefit of the\par
+patent license for this particular work, or (3) arrange, in a manner\par
+consistent with the requirements of this License, to extend the patent\par
+license to downstream recipients.  "Knowingly relying" means you have\par
+actual knowledge that, but for the patent license, your conveying the\par
+covered work in a country, or your recipient's use of the covered work\par
+in a country, would infringe one or more identifiable patents in that\par
+country that you have reason to believe are valid.\par
+\par
+  If, pursuant to or in connection with a single transaction or\par
+arrangement, you convey, or propagate by procuring conveyance of, a\par
+covered work, and grant a patent license to some of the parties\par
+receiving the covered work authorizing them to use, propagate, modify\par
+or convey a specific copy of the covered work, then the patent license\par
+you grant is automatically extended to all recipients of the covered\par
+work and works based on it.\par
+\par
+  A patent license is "discriminatory" if it does not include within\par
+the scope of its coverage, prohibits the exercise of, or is\par
+conditioned on the non-exercise of one or more of the rights that are\par
+specifically granted under this License.  You may not convey a covered\par
+work if you are a party to an arrangement with a third party that is\par
+in the business of distributing software, under which you make payment\par
+to the third party based on the extent of your activity of conveying\par
+the work, and under which the third party grants, to any of the\par
+parties who would receive the covered work from you, a discriminatory\par
+patent license (a) in connection with copies of the covered work\par
+conveyed by you (or copies made from those copies), or (b) primarily\par
+for and in connection with specific products or compilations that\par
+contain the covered work, unless you entered into that arrangement,\par
+or that patent license was granted, prior to 28 March 2007.\par
+\par
+  Nothing in this License shall be construed as excluding or limiting\par
+any implied license or other defenses to infringement that may\par
+otherwise be available to you under applicable patent law.\par
+\par
+  12. No Surrender of Others' Freedom.\par
+\par
+  If conditions are imposed on you (whether by court order, agreement or\par
+otherwise) that contradict the conditions of this License, they do not\par
+excuse you from the conditions of this License.  If you cannot convey a\par
+covered work so as to satisfy simultaneously your obligations under this\par
+License and any other pertinent obligations, then as a consequence you may\par
+not convey it at all.  For example, if you agree to terms that obligate you\par
+to collect a royalty for further conveying from those to whom you convey\par
+the Program, the only way you could satisfy both those terms and this\par
+License would be to refrain entirely from conveying the Program.\par
+\par
+  13. Remote Network Interaction; Use with the GNU General Public License.\par
+\par
+  Notwithstanding any other provision of this License, if you modify the\par
+Program, your modified version must prominently offer all users\par
+interacting with it remotely through a computer network (if your version\par
+supports such interaction) an opportunity to receive the Corresponding\par
+Source of your version by providing access to the Corresponding Source\par
+from a network server at no charge, through some standard or customary\par
+means of facilitating copying of software.  This Corresponding Source\par
+shall include the Corresponding Source for any work covered by version 3\par
+of the GNU General Public License that is incorporated pursuant to the\par
+following paragraph.\par
+\par
+  Notwithstanding any other provision of this License, you have\par
+permission to link or combine any covered work with a work licensed\par
+under version 3 of the GNU General Public License into a single\par
+combined work, and to convey the resulting work.  The terms of this\par
+License will continue to apply to the part which is the covered work,\par
+but the work with which it is combined will remain governed by version\par
+3 of the GNU General Public License.\par
+\par
+  14. Revised Versions of this License.\par
+\par
+  The Free Software Foundation may publish revised and/or new versions of\par
+the GNU Affero General Public License from time to time.  Such new versions\par
+will be similar in spirit to the present version, but may differ in detail to\par
+address new problems or concerns.\par
+\par
+  Each version is given a distinguishing version number.  If the\par
+Program specifies that a certain numbered version of the GNU Affero General\par
+Public License "or any later version" applies to it, you have the\par
+option of following the terms and conditions either of that numbered\par
+version or of any later version published by the Free Software\par
+Foundation.  If the Program does not specify a version number of the\par
+GNU Affero General Public License, you may choose any version ever published\par
+by the Free Software Foundation.\par
+\par
+  If the Program specifies that a proxy can decide which future\par
+versions of the GNU Affero General Public License can be used, that proxy's\par
+public statement of acceptance of a version permanently authorizes you\par
+to choose that version for the Program.\par
+\par
+  Later license versions may give you additional or different\par
+permissions.  However, no additional obligations are imposed on any\par
+author or copyright holder as a result of your choosing to follow a\par
+later version.\par
+\par
+  15. Disclaimer of Warranty.\par
+\par
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY\par
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT\par
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY\par
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,\par
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\par
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM\par
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF\par
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.\par
+\par
+  16. Limitation of Liability.\par
+\par
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING\par
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS\par
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY\par
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE\par
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF\par
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD\par
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),\par
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF\par
+SUCH DAMAGES.\par
+\par
+  17. Interpretation of Sections 15 and 16.\par
+\par
+  If the disclaimer of warranty and limitation of liability provided\par
+above cannot be given local legal effect according to their terms,\par
+reviewing courts shall apply local law that most closely approximates\par
+an absolute waiver of all civil liability in connection with the\par
+Program, unless a warranty or assumption of liability accompanies a\par
+copy of the Program in return for a fee.\par
+\par
+                     END OF TERMS AND CONDITIONS\par
+\par
+            How to Apply These Terms to Your New Programs\par
+\par
+  If you develop a new program, and you want it to be of the greatest\par
+possible use to the public, the best way to achieve this is to make it\par
+free software which everyone can redistribute and change under these terms.\par
+\par
+  To do so, attach the following notices to the program.  It is safest\par
+to attach them to the start of each source file to most effectively\par
+state the exclusion of warranty; and each file should have at least\par
+the "copyright" line and a pointer to where the full notice is found.\par
+\par
+    <one line to give the program's name and a brief idea of what it does.>\par
+    Copyright (C) <year>  <name of author>\par
+\par
+    This program is free software: you can redistribute it and/or modify\par
+    it under the terms of the GNU Affero General Public License as published\par
+    by the Free Software Foundation, either version 3 of the License, or\par
+    (at your option) any later version.\par
+\par
+    This program is distributed in the hope that it will be useful,\par
+    but WITHOUT ANY WARRANTY; without even the implied warranty of\par
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\par
+    GNU Affero General Public License for more details.\par
+\par
+    You should have received a copy of the GNU Affero General Public License\par
+    along with this program.  If not, see <{\field{\*\fldinst{HYPERLINK "http://www.gnu.org/licenses/"}}{\fldrslt{\ul\cf1 http://www.gnu.org/licenses/}}}\f0\fs20 >.\par
+\par
+Also add information on how to contact you by electronic and paper mail.\par
+\par
+  If your software can interact with users remotely through a computer\par
+network, you should also make sure that it provides a way for users to\par
+get its source.  For example, if your program is a web application, its\par
+interface could display a "Source" link that leads users to an archive\par
+of the code.  There are many ways you could offer source, and different\par
+solutions will be better for different programs; see section 13 for the\par
+specific requirements.\par
+\par
+  You should also get your employer (if you work as a programmer) or school,\par
+if any, to sign a "copyright disclaimer" for the program, if necessary.\par
+For more information on this, and how to apply and follow the GNU AGPL, see\par
+<{\field{\*\fldinst{HYPERLINK "http://www.gnu.org/licenses/"}}{\fldrslt{\ul\cf1 http://www.gnu.org/licenses/}}}\f0\fs20 >.\par
+}
+ [Licence_End]
+[Registry]
+[Variables]
+[SCs]
+Desktop
+Skype
+<InstallPath>\Skype.exe
+
+
+0
+Startmenu
+Skype
+<InstallPath>\Skype.exe
+
+
+0
+Startmenu
+Uninstall Skype™ 7.11
+<InstallPath>\Uninstall Skype™ 7.11.exe
+
+
+0
+[IFP_End]
+[Serials]
+W6GDD-GWBN0-0RX99-4IUEX
+W0OXH-FKXTD-ZP9O0-4LSFU
+TM6K4-C94UG-6SPRL-UFMQO
+F61KM-83ST3-CB2PG-M4GDM
+57J1S-KPV71-G2XCL-PILFE
+SBNFL-4EO8V-HMPFY-3Y8ZU
+7Q3NM-2118M-B1KR4-QSO46
+BJVZR-BAU5Y-FMIY1-1CDUT
+0T9RI-UC7E2-FTIMO-RAIMH
+QNVXP-RPMJ5-Q0675-PNBEY
+VDXV6-C0GC8-TLJMD-G5WYF
+A3MTH-QEGFA-4BAGH-E7N5P
+7RLC8-FHK3U-Y0FBJ-R86FD
+TSEGV-X89TS-IRJCO-H2M58
+FB5TW-MCO5G-NVXC3-O0X23
+4JAEQ-YD1SI-HN2Z9-Q1F15
+EWRQG-CFX95-FCC2P-Q8TYZ
+T9ZWQ-NRPI1-PNJA7-S8O1T
+UD280-PR2VE-QN9QE-O31S7
+USNMH-66D24-BJTYG-QULQR
+AF65U-FHI60-XPM4I-KVXUS
+3G8S2-XQQTU-EYJJF-0YJOQ
+3ZUUH-BBPQB-G10HR-GX9NU
+9MZ9N-S8QPM-2LB3G-YRAKZ
+P5M6X-G29JF-E0YE7-GQ8EF
+MAD5F-SFGSE-NENVZ-1J6J3
+AL8GD-ELZPD-DZO90-IPLWU
+5M5JF-PGNV2-BONX4-389XY
+BW2G1-OC6XN-BC41M-54HIY
+5RCWZ-Z6CGH-62W8J-0PB3X
+UZDKI-FQ0A8-8W25D-JTEFC
+IWYHB-TJP3Q-5SWUE-CA7VH
+1BRM1-GIHKP-Z3HOQ-UQLQ0
+4PMUY-IDMUS-INW61-Q32IW
+283ZC-QEYRO-BQ98L-SGRUN
+RRT1F-MDPCL-OLBZS-1VRSM
+UUMJT-OHEBL-9UY9R-4D1I3
+SY5M6-T1R64-1LS9G-1ZVMU
+J5SY1-U7EUV-JPI08-NNYCR
+4WOGC-TQJJ3-JD0KQ-ATIZT
+S2HF7-XYV6K-NZIEW-RSLVP
+ZMF83-FOKEJ-HSAO8-YXXTC
+F9UR7-RMC69-ANK0Q-GOXKD
+LELK3-H86EY-EA3UU-JFD4Y
+D7AC6-OHOB7-QPZDJ-G1JFL
+K5QAT-U2GB5-FE6L5-U1C9P
+Z49WJ-MFAIV-RM5K1-L4MDJ
+91MVR-5GI2F-8DKLC-9JU4E
+OCDXS-8Z3ZH-XWYOO-QWDQ6
+FM2FI-KIV3D-Y1U3A-RFL61
+JMUFR-CRJ9J-FYMJM-IFBJ6
+ZKL93-N8B5W-EY0SF-J7PCD
+6D0PS-GY5CS-376LC-H3PWH
+7LY7P-Z8ZC8-GTYH8-0R2DC
+KBS3B-FZXT9-DPKQH-V8WU2
+FHID4-HRY3A-QB6GI-NNO75
+AIYCB-SXDET-KMM1O-7ZRCF
+L56IH-FKSGI-O6MYU-SWRPM
+4OWTG-2LV8N-UAF8O-18AKS
+OEPS4-F8G1F-HTDRU-WW3DZ
+3R7MN-XQTLC-LDNQV-0T5RJ
+K9TKR-WLJSQ-B1SHY-D0ZP5
+PNKB4-LZHL4-955YA-P2IQK
+MOWVA-1FJ37-EA11W-KYWMH
+N67SA-8Y7WE-A8IMX-ZVR8Y
+C0AZH-SJHK1-VZ6ZR-H5GFG
+YYTZ1-HUOC5-7LXBR-GZAA3
+BWPB2-0DQVJ-X163U-NV4VV
+T93ZX-1E9RI-8O6ZS-YKDB3
+1MH8W-K0C92-9YT5E-SRW7I
+IG1LJ-PA67B-HVQLD-8XWFI
+VHC5Q-55NLA-UO96A-1L5YR
+5D97Y-LJGTF-NH94A-I6XP1
+F5UHB-1DC8D-WURND-KBUR7
+9ZX65-66Q6H-VWNZ1-KUOMU
+1ZHI2-FAW4G-ZYUNH-S5YG2
+VC80W-DDG78-V08FO-7V00V
+3OLSO-9RX3K-AHW9K-LAVMH
+C015P-IMS22-1FG9W-KGG54
+S3SIV-25H55-OE6FT-HRVWD
+G0T90-SD3L0-F5MZC-AMP8K
+DP9VF-GQDC9-15I9J-43CYB
+EJIFQ-RJEY2-2TMMQ-6ADH4
+OVTD9-QS9Z9-BLO1X-NIHGN
+U6A8J-68V3Q-URRYM-TY9K3
+J6AOT-FLDEZ-3DW0S-QHYQB
+UJBJP-78WM3-EIW80-GVUXZ
+TCUU0-Q5XGT-M4ZTW-TQPIK
+KD4N6-FPUE6-LDXRP-0047B
+R2M2C-629N8-MZXI4-ALNJR
+DPXNM-0GWC4-9J5BX-FNO1S
+Q0RLU-36DWS-RMR22-AG9IH
+ZBNSM-UF14Z-PFTI1-XIVYR
+LQREP-5TWNP-9621P-9ZAZV
+9V78P-C4FQL-K81R9-C9RAH
+NN9UP-YC1WG-FTU0E-4NFSN
+9KC2X-HKFJ9-NBBBL-YOCNR
+VMZSL-P0SUP-0TJF1-WN8AW
+HC6KQ-FI7EY-8980S-P28YY
+5UFJK-EJ71O-PHN3O-VLV8K
+RPI9U-LOX5W-AM6AU-1TPN5
+CGZY6-NWSV1-5PJPW-X6BKM
+I4RQ8-EGEP8-DSZ8V-CLI02
+MXI31-3FFSR-JL1YE-4XPOI
+2BU9R-HXG6C-O5Q5M-THJV5
+L9WVT-ZDEM1-NQJF0-VGBPB
+CLX2B-22A4N-QEMB8-4N1L0
+OQ7VH-FGBG6-F4LNW-8QH55
+KTLZF-HVM9O-NOGIQ-QLWX3
+S27G9-O5CGO-IIHE5-KPWWJ
+TFXJC-K3XTK-4LMJF-D7007
+AXKE7-EJZGI-6C5HD-4F3ZZ
+ZE6FI-Y5U9O-KUWWZ-D0N2Y
+IQTY2-UUD5K-RR773-HILW0
+4CDA1-PWFQ7-UMEP9-J0QAS
+K3J6U-FBFYJ-LN0Y3-MNX5V
+KOJ3Z-8E2T5-NEREI-WLOYE
+EL9F2-VZDWT-UNSU4-4KFSJ
+XT51D-AFG7K-S8WHY-2K67N
+TZH8G-00Q0I-YVOTB-TPAA4
+S0C03-NK9QO-2CCLW-7BFLB
+V99N7-1SIVB-XQDOC-8OWVQ
+UCTO3-IWYQE-9IMS6-M06Q3
+66W33-U8YG4-6CDWX-T1IZU
+CB6JW-HCF5O-Q6PTD-IT76S
+GXTI3-4ABHG-2VZDK-JAHDH
+VVP33-HIVTU-GZF4T-559M6
+6BYQH-1W82U-Z12BB-7INQZ
+QI9FS-BNL2F-NLEPY-0473O
+8LHW7-BT92B-43L6H-ZIAJH
+ULF2K-D58DS-VKSAE-GA1HE
+SP7EK-AYP2H-4XNRM-QTMIO
+DERL8-F4MY5-LKA9P-1IPGP
+INOQW-TDKB4-CG668-0ZHAE
+QV4M2-I4OJZ-QX3QB-CKVUE
+OYX17-PMDZZ-JNHZ2-6XOJL
+QW94E-2YZWS-LMSE5-C9PW5
+653AX-NPKAW-V89QK-TJ01N
+20YMY-OGOWO-UHV46-MIJ48
+YJFMS-T79FJ-CV3RA-5UT9Y
+SRCJC-WY9LI-BPAXS-W88CD
+VVIGG-XH4F8-C14CT-CYKAB
+MCS9M-TCK49-MF170-9JBBJ
+AK6XX-UA21E-1VV1S-0H2PW
+L6D7M-33JR0-0XLM8-PQTYG
+0CU6F-GHFAT-US6RE-DGC06
+9W0ZH-WXAFN-3K5NH-O94H2
+9AZHV-VXGYJ-DLFQ7-D0Q61
+X2LV1-OSQAU-4ERD6-F9ZZK
+PA4KN-TJIOB-IWVEX-HNCIQ
+UJYKB-QJUEF-AJV5G-JDZ9T
+EGUG5-XUJS5-SUZEH-JE1HT
+3YU78-623TA-VNS35-J07FP
+7W2GC-V6ZNU-ICK9N-2RLRO
+JQJDJ-FL08F-AVHB0-ZMMDM
+OGH8G-952IS-C5FXE-WQM9L
+U35DH-2KT0X-19QNB-BW2HI
+U0BV7-T47L0-YPUVM-DAQ7M
+04U57-TTLY8-1VXR7-509IK
+9UDPG-ZMD29-4O9WU-PJE8F
+ONBI2-UEF8U-GW23D-WUZMU
+ZT5MY-4I2UV-BUXCX-WZJGQ
+RNCUQ-265UG-GJ8TR-OR6JF
+ZQ7ZY-AYY7C-A6D26-HF5FJ
+SSHO0-0TBS0-EORSF-YZBG1
+OLK2Y-U0TL4-2VKPU-Z1R9W
+XYWZV-TOPOZ-CMQH0-RS6K7
+QIANI-VQBZ5-9F6IA-0KO1R
+8W0JY-3AFYO-AL2E0-GA6FF
+D15DQ-GGQ5Z-A8EAY-UBLUN
+JO0TQ-55U41-AYL09-BEM69
+560TK-X86LE-Z38ZX-G7Y1K
+PI7AG-6TZGO-SDLCY-BYGH6
+G7SBX-C6E7Q-APNAU-HMEK3
+7F93N-UXGI5-CDQJH-K9NGY
+A4ZLQ-0NK2R-T3ZRA-72I94
+T6U4V-8H9RX-KTCHD-NVR9B
+TV4G2-QJ96E-JUI5X-LT4OJ
+LFCT6-DBBQ8-9ZDLT-40E36
+FUMUP-CR9VW-ZV7KE-FP7U6
+6KRUP-966UL-GZNMG-5PQFS
+OGMTW-6TD19-VGFMO-2UCAX
+28XQY-CX9LI-7WF4O-XJ0LV
+70DSE-7MCLF-ZQDKD-UWJ5K
+ZRQEO-17L1H-HV23E-ZASPG
+R4330-JEB9Z-2NV1S-39C5P
+Q00IQ-FE5Q8-A6J7C-L3U2X
+IE6CG-V1G26-LJMUR-YUT0T
+H7K5Y-8QFF4-F0FRV-U2FFK
+PMJJM-SXDYL-H8H4L-XDM3U
+5NYLH-1UUI3-G0ZPP-H8TY2
+L7HYJ-FYAG9-PCDXZ-G3746
+ERHNV-V7220-J6HOS-52JO4
+IVJ8V-A7VN0-BM5YH-TKMUE
+00JUT-0JS9L-S958D-4HQFE
+GPQA6-9V4PL-A2N9F-WA9RU
+2V224-N9KCS-D41KM-HW6CR
+114UL-UXCOZ-JQBI8-NYL4J
+JTTCQ-J0MPE-9JKCK-D98VH
+OHDRJ-CW28A-5TXHU-210TN
+QOU9B-OSENP-ZF7JX-ZAF79
+8XAK7-C19BU-4W3DQ-RTM7X
+J648S-2HD0M-CZWCL-0AS6T
+0ATJV-ZQJN1-9G4OE-BMJ0H
+JTTOL-5R9YW-1FJ35-JPO72
+6DMWZ-2CKMW-VENSU-QL8MZ
+VSFSW-CIFH3-FPCSD-EOH1Z
+A0JBI-AQC2B-BW15V-DL4DU
+MH8YL-ILH1J-4VQMG-16S85
+2P6FY-VXNJ3-LJYMR-R2E5R
+Z4KM3-RGF2F-MBDA8-GN2PN
+5ZUFH-QBIDP-T2LYP-5FN9F
+38H25-YQSDZ-PSRGJ-P1I2V
+N8T74-597X6-QSV1E-T739M
+P9ORO-B85H0-43VCI-ZVB7G
+S8GT5-MRFCP-0RPIN-4ZVII
+CKHTS-IZK73-HHPMV-85E7B
+7Y7R4-770HU-AHDA4-GGYLU
+D4SPZ-G9WS7-6UZNZ-5HUF5
+232M5-ZY6BV-SIRIB-RZ6GD
+S5W0J-OXGPA-BSIJL-32KIX
+ZX2FY-TKAHQ-5Y6R9-4WHIU
+OYYEB-FEBFA-1MSZ2-Y27Q9
+VWNX7-CQZA9-GQ641-ETMI0
+LNQTA-YFB3Y-D8LG6-W0J23
+3B0ML-U6PPH-C3QXT-G025I
+ZB95H-X68JN-ZX9JQ-ETBU1
+OOI4R-T7IEG-A997T-S5CZP
+BILRN-KT1J6-2ZQ42-P17NK
+9FJS9-WMLGW-VYRTI-AHP6P
+D20WA-S7QLJ-CLRSA-IXQ8B
+QNFWI-GSI8Q-6POKW-F1HMX
+1ZGKD-7MPRJ-HZJ04-U3HCG
+EVZBT-2PQAQ-ETP2Z-0VPTI
+4R0UL-NPMQQ-9COKX-PAKG4
+5RNDN-FQ956-4CPAH-0MDC2
+4WZR6-MJQTL-DGFLK-Q6PE2
+TDH5Y-ASQP1-H46G0-RXJFM
+16MKV-3GKME-6TWIK-80M6J
+LIQ0M-WO9EF-0UNUW-FVET9
+V4KB0-3C62F-RU9ZP-BH30J
+YCVSG-UU9K4-CJQOK-HVZ0E
+VZTRE-3KM7V-D7N9T-WQ6X1
+LMWPP-DE6NM-IDZHF-DO6FN
+OSEKA-FZFVS-ZUYD4-29LOI
+JL2FK-J076L-GDJ5A-8K4AC
+B6LIP-KQBAJ-YGR0K-L4CLQ
+9AAFL-EC6LR-NEC2K-CR7F9
+SR73X-WI5TK-IRXUC-EEPOE
+BY9VZ-5MI6I-0UQ0Y-ECQ09
+2FK4D-0UJOF-5O3YT-9A9GX
+UE6K3-8MDV6-Z4OT0-MZINH
+UJSO9-UBMZJ-CGRH7-KY0MZ
+XCXYA-3SD1G-6DP0J-3UG51
+D8B8V-WTNPQ-ZTQ7Q-PCG5N
+I26S2-3BX3Q-RELFZ-O4R7T
+KRWHG-K17BG-BS0EE-2HYBZ
+I5TRW-YBR4Z-OCZQ5-HJM0P
+YCEOT-VSN9L-OA0D4-AU2YN
+O4LDH-LCY8D-ANA8E-WBVEC
+TOML6-6KIW8-02GTL-P6NTK
+17A40-0EEYU-F5HTD-SP9OX
+A1G23-DQIEO-OSK9I-GM8LO
+ODK4U-J660U-YHST6-OU30K
+VPYKG-8S5DB-HB7HN-4YCM7
+AKH6J-AQGZU-CFW3C-EK5EZ
+UG8UL-0GEBX-P07JG-LBDFP
+3V51T-I74WA-RT12L-BXGKX
+4EQ73-NRRWB-BCKPB-AKRQS
+FPJNB-RNOGE-2PP68-8TJ10
+8WYRU-WRY71-1SCLK-EV117
+46ASQ-S090Z-H93IV-OIVMH
+Y05PX-X2URJ-G0HO9-T0KYJ
+5LB76-6XGOB-QEYXL-LA2D4
+6KLWB-0Y9D8-N7MXE-PJJ3P
+2BZLT-G4M1M-2GJSI-TLMKM
+HJVZP-VKQQO-O5YYB-WPH4M
+X1EZG-WAD6T-EYNHP-PP54E
+CSPRT-HW5NO-2LNKH-0FBH8
+H2C8N-03DFX-MXPYY-DF1DI
+MNSG8-FO839-6F3I1-XP6K6
+JJGVW-KY5LC-86UDP-2SXDW
+H6D9A-LUUSU-NRDS8-UZ7SG
+9WI4M-FAVCE-4ZFDL-4M9ZS
+XL2ON-KTVZV-G19MJ-OXAIH
+7X2EV-A4C4G-IN0W3-HPW7B
+8TTA6-V2K5M-QAWU1-A0921
+1TLNA-JZ79P-3PHV2-FK02G
+P46FJ-TZXWB-OZE5W-3I99Y
+5JJ0G-VXXSL-Z2F1Q-UFQUL
+AC17V-AX0WJ-4YF93-QZIN7
+A91XK-DDWBS-PJ8VZ-CW231
+U23QP-HZTV2-QVSNV-VIDIB
+ZLH5T-1X3B3-BU920-KN4HI
+BPCCJ-87ISY-ZBH9P-Y4ATS
+H4Q1Q-AG93A-BPB63-C9TA7
+VF0S4-AP9RH-ZWKQ1-9G6DS
+361AF-ZKRRO-M3O75-O4FRZ
+NYZGT-F9YAJ-6KW0S-F6QL5
+O7UO1-B2L7G-H38QV-IM7YZ
+3P5LV-Z8KP5-0U71T-06IA8
+XUOIC-7NI8C-WO905-UNO6I
+0OH3H-QJRO6-0EC2S-G398C
+OSNQM-UEWRU-P9TW7-PZ2J0
+Z5JD9-2ENB7-APT3E-U39OE
+8SRJM-ZEVK2-ST3L1-A5VR7
+YCFSN-9O5EK-77FC4-3NP3V
+F35D5-C88N1-5EMNQ-JTC1D
+R5RC3-4M3SW-L8LPS-IBCOI
+FVQ95-5IGJU-OSRIC-BPGP5
+759KE-3M1HV-PGKMI-WU1W7
+IRT12-Y5W34-SL5HK-BYWS5
+NFYYL-PNHGB-6LG3Y-JQH7L
+S63E4-C565Y-0ODAT-QM1LJ
+4IBSQ-VYNT5-NNE4D-BG19D
+P1K7W-JFMFQ-Q1EZL-W1C4E
+3JDJF-74MSR-D4FC7-0PR3E
+84R53-3CK8A-Q31Y8-TBSW7
+BPC9E-PL4BS-SQPMW-C70ZT
+E7CB6-K2Y26-GS88N-U0D9M
+ZEV1G-YOXEN-FE958-EOVCZ
+D5M5O-5SEQ9-XTTYN-SQIRT
+EC104-YC4GP-MNNXW-3J3OS
+1XX11-LK04Z-HQ7CJ-L5YRM
+AR9RZ-FZXEW-I6O16-RA54S
+WFGOJ-Z5JX8-KYJSE-A9MVR
+KFBYC-4J9GR-C2ECF-IHHYM
+96MEN-HZRMV-OP2B3-IBWBI
+LBEMU-ZZ6FR-CTQEO-U4A73
+4IVEK-SVTNA-SR704-ZKVMS
+T82D8-EW4OV-XP1XW-BJ7OS
+19TPM-2J188-XVN8T-VV851
+V3DC0-TWNBF-LDFA9-EOAM8
+RMO8Z-FWUFM-TNV2B-7WH4Z
+IO8VK-SJB1U-ZDH4Q-GZTJK
+M4RZU-UNTUS-DZ7Y3-7WIVE
+7EKVC-P9XML-RQU8B-GN8YA
+4CTGM-MDH0K-B111D-CB34J
+FH7OV-HXEX1-I7D69-WYXAE
+SZOR5-X8DE0-DBKPO-0XMZK
+4GJL2-L10R6-COLYX-MQ0WP
+FVIY9-JZGLT-CT1P2-2Y093
+8RWVL-8D5B4-PYULR-60FC5
+ILNXC-IX11K-DABLF-BWJG2
+7HJ4O-VEZWE-Y88H3-4Q9KJ
+0RNUV-53B6P-SM5G9-3X3YO
+R8BHQ-GYN4Y-T7LPA-X1KTO
+8BLQY-5IB2G-OSZ8Z-N0OVP
+ES395-5ZCD1-AV8YW-Z7ZIJ
+7ARMF-C6ICC-BB0AM-5EAYA
+XQSDT-4HFFZ-UE4WE-6HKJ4
+2WOY1-E6V9Y-L6ZBK-OQYTJ
+BJJ4U-3EE4Z-D4O6I-11NOW
+H90BP-RUP4H-DY11A-L44FC
+MM8B8-X2VWV-EK6BP-RYP8W
+T0PQI-KHJMU-F9365-NW5H3
+K4EKF-ZBKDM-TANG9-9ADVT
+9FPUS-ZZV7Z-QIVYU-KG5PP
+XRNCF-CSXFZ-E5DKX-22OHT
+1CVDX-ONA8V-ICY6J-6DRWG
+9I87N-JWHEX-2BYE0-G5NCP
+3VGLH-349T8-K71OJ-CRLCR
+LJM1S-U0XQ3-XEVXI-SEHSK
+T00NQ-SA76X-87PB1-OLTHU
+K242K-AAIFV-V2XKL-4G5K1
+BJU3N-IOFR2-AJEXP-6MWS3
+C4LN4-30AGK-KYXAW-RN2FC
+EHHM6-D2H73-UPYKZ-ARYB2
+PXUMI-834VM-MLXKA-164TO
+HYN80-P2AGL-HTV02-KTMZI
+5TCWN-Y30S2-KULYZ-7H62M
+ICT7H-3RRMJ-6XCTA-OCQ8M
+HCPOI-2U6EU-46GW9-TBFGE
+JN3PQ-29750-ROP11-1CEED
+RH5DQ-925KT-64MEL-4WCV0
+42HU7-C2QU8-FD0DA-KU7X0
+VKN2L-QU2CC-OGQHP-B0L7V
+IXVXP-2X0KI-Y0SGJ-KXPTF
+Q1ZKH-17ZUC-8LK7O-39L1M
+ULRBT-6GRDO-O28VR-EWU0W
+EJ58H-HYMPS-4RY6V-JD7ME
+4UYHS-TY1W0-TMUDO-78I3R
+NMM25-JJC7H-7P0DC-JAHZU
+CF20Z-ZE6XH-91Q57-PRWTX
+FXSPI-M3JCF-9FXLU-RR5XL
+NY5RR-V1AUY-PRV63-ICTGZ
+E54Y5-NHOM8-3KTFC-AVCRQ
+4KI61-CI0GR-5A9EY-5MBGC
+72747-Q39YE-I2YK5-LF11R
+PQ36U-4B0AP-WK8GZ-0HL5N
+0NIEU-REMIB-YPT7V-GNTYM
+K5WEO-18J92-9YII5-KTGWB
+V2NGE-D29XV-X7YP5-W9369
+DHP7R-9DZAT-WBNXT-VH23J
+9A0V3-9PASW-7ZUWX-O0O85
+18F8Z-WYNDK-2OOHQ-MBAH5
+H6U3G-SJT9S-2UVL3-D1A57
+VBP63-ZZ6JF-0JOXE-YOR2J
+Q6SMH-3LWOD-2W33T-18N0K
+7L30W-6381Z-CM4VT-BRCE1
+AHFL5-5T409-18NZ3-VZ1AO
+EVV5A-JGBY8-26905-ZR8LE
+Y9SWI-6EAC1-GC45W-UOGM1
+LRU3D-8QLEV-IO6TU-4SXXE
+GTSA6-G9C5X-MC66B-OV8VQ
+P4PTR-PR0LC-407J8-98Z12
+D9ZDY-C8AB2-MYIJT-B5CJ8
+GEAEG-I5VRJ-D3NG1-EW6HL
+N50ZE-912KZ-M27J5-0ZXU6
+WG7KF-OJ6XZ-RCBLV-M44HV
+SU8Y8-PDTB9-5BPZ6-KXKBJ
+FJL8M-HY2TF-1LCAE-IF8AO
+57BC9-QK91J-DOQTL-4QZV1
+FOK49-Y7LR3-K9M7D-NKXZX
+01R6S-5490R-FX59D-N1NUP
+MF5W4-YS4SF-20Q0G-Q3TKN
+WQG5R-0EWCZ-9BBZT-FBY28
+2378Q-P9JKD-BAYP1-7XPCK
+L6K8V-8Z9RQ-MRJM6-MW98U
+4ZH2E-ZZYKV-2WTKK-6GQBX
+RGUD4-LRW8A-DTX37-I1K5P
+TTL5S-18NIM-XPHP5-S07CW
+AG10O-M64WY-IGXWW-HLYQR
+8PCBZ-GLBHP-FPNA5-HDN44
+RJ7Q8-V695U-GMNEB-YSGAE
+5MAOA-7F0IA-E2GZS-0MPM3
+K7A1Y-048UR-G9W95-JYBUU
+NEKXO-DPO61-WS9RA-ZGXN5
+MSM9W-3BBT1-TM5VH-VIMRV
+6SS7T-TVB0T-48II7-ZNCO4
+EU4P8-HDTKE-I2B4M-0I7V2
+NMQA1-8DA3N-E6YLH-Q6LRW
+3PKH2-PZS55-5PQCA-QB08X
+F8R7H-HWVCT-J63IL-UORYQ
+PWXRQ-XQFF4-WJ0GJ-NNHL7
+M4S4M-MIBLA-LLHWJ-J3ITP
+O0U4B-FINYA-7DUKI-695LC
+OEARA-3SOXF-LX4OD-FGURH
+MNKUE-7NY4Z-NK2J7-TDBYI
+KBKQ3-8M47X-OMDHQ-2DIEH
+O9TFH-EMRYC-B2JO7-L7SJE
+5K6S5-6B6KV-TCLFZ-R58JH
+QAPYT-43U0K-J3ZZ9-AA1R6
+UWSDP-OND1B-6B4BS-ZMT5J
+R6WVV-S7CP7-BISNL-RWKUU
+BQIZJ-UP2T5-XI9VM-DIUK8
+PBIRG-2YABO-JCYOA-FZPO0
+DY6P3-ZHKC1-VV8GD-MLYXA
+C2EP5-OCK7G-923HH-FARC8
+GAHFW-D8S9A-802O9-6ELG8
+0YSK9-VOY82-S6W31-MU8KD
+JTEF8-FZP5X-U96UN-Q3ETY
+MFY07-1WZK0-7K5DG-ER2GL
+8VWR1-E1QNY-BXKZC-H7XNI
+YJRE9-BPPIC-CW9OP-EW15X
+B9BZU-49RD7-SOWHE-WVIFJ
+Z25NO-EDX86-XPBJ8-X5Q4V
+LBVV2-9HNSW-DQL4U-EQ7T9
+HA7MF-4VVPM-G33LM-ZV4IG
+C3YSA-YHEJE-ZM6S3-T61TR
+XGV5P-CHSM4-25E68-33O32
+LAJWA-DKBGC-B60OM-FJ5XO
+E39OR-JZW8V-HYAPP-VLU7H
+N25O2-NUNTJ-B4SE4-2IDV1
+TPOBZ-M8THY-34KXC-XMTEB
+5UZ2N-H2XV7-SQ06D-ZIXJH
+HRW58-GGDF1-1LOTW-517KW
+M86C9-NUK8P-R2P4L-7KE55
+WE0F6-B054N-L46DF-29L9D
+XO69P-EY3KO-CNMPI-SIY1H
+PWD5T-L3VIC-EGIQY-IHMCS
+EOB70-08DVN-EMV2A-NU3R4
+UOV87-OXEE7-ABQRI-Q4PH7
+9QNYT-A15S1-SE5BL-UCMWC
+KRSDW-UXKOP-K2DIR-K60YP
+KA10M-8GIRD-H94PT-7J5L9
+NGQ7Z-TI32K-9X6FS-JAJ72
+8UVNG-CXOHJ-YIKCS-AIB4L
+4UU7S-4TEFZ-QDPGR-PUBWC
+IZ2UF-WSB6I-IHXWY-SPHH9
+FKX8J-C3F0X-EETXL-1CSLC
+HYH14-P3S2R-J6G8V-B1WBJ
+FK6SP-W76WH-L92XI-K1ZWW
+LFQML-H90I2-ZD6LK-HT0G6
+3GNOA-R0WG6-TYK9N-DDYSJ
+ZSB8A-6HMT7-27V9X-XGOOU
+AKK1E-N7JOX-12KGF-1WBZD
+EANTF-VA6FB-X9R4Q-PV9TU
+ZVVEX-QG84N-46JNV-Z5J47
+IOUHF-N5DN9-N7N9A-D2MZ3
+1MIKN-4CE0O-ZM975-C1R6W
+BMMJP-ZIE0B-1UT4U-UHUYT
+43GBE-CZERZ-18HV2-4FRDM
+I7R8D-ZT0EZ-JK7WU-XEH4D
+U42ZA-ZMFVN-0EVI9-NY7VO
+OOUWZ-D1XOQ-NSN3B-PXVCU
+CNZRO-SDEE4-4M518-XYIW1
+0JQFZ-KPERH-NNTVW-SBF9O
+KQNA1-RP64T-SCJNW-14VFO
+5RCLM-0U6I6-937O3-BU24C
+2TY70-Z2488-EPBI0-F1DJ0
+T7AHV-L7F56-1029Z-TQF91
+NIWIK-4JEQE-A3J94-DUAL2
+8SSEB-6ARUG-84M9Y-GH2A1
+6JCOU-0BO4Z-P0010-8OETU
+VQNSB-ZE4S7-7DY76-HEH4V
+KD7S8-NDLEH-RJZMS-ER4B1
+FG03H-Q7OIK-LDSOS-JQ26P
+70G9K-AC6XL-DTDJV-GJOHM
+4E433-L1420-WLWCX-GDVDE
+X2BGD-GETQY-HYD2O-8UKW8
+TEEQE-NVYCR-448J0-305WW
+95YF9-CU80D-BM2AR-JR76Z
+H6VWD-SAA9I-GA611-CIOI4
+W6I7J-0CN9W-29FEK-MG5YI
+QFE3S-OSK82-C0S9P-HHTSZ
+I9XHX-I0E4M-Q1HOW-YFSF3
+HS9LP-0Z2L0-MZKFO-5HPGE
+MLZCU-SZ71R-DTE3P-BJDXR
+67POI-LCYD1-XVMNV-S7536
+5JQOQ-G003N-947B8-83HU2
+HBJ69-KP0IY-S2O39-LN713
+3YCO3-MZM5F-AXMBX-L57GA
+T19EE-XV6EF-C3HMH-COHHZ
+KXR5W-B081Y-1PZZA-MZQMF
+7CJAO-05BDX-GEYRM-Q5GM3
+EL2MZ-URUZ4-6S1LF-3FLLR
+IZVFP-VNIPI-HHBAX-DWRVI
+AGCMH-7QJAW-3OIFE-N37AS
+GZ23F-SVG69-GFJOU-HD6GZ
+SOVBJ-WRAYD-CCLH5-OTBQC
+32R2C-N8VZJ-I0SG6-WHMIE
+JCQIJ-8IRYG-R95U5-LTR52
+XH4S9-RDTCG-YCBP9-XE1QH
+DGEZ0-ASQW7-4C076-7G3HF
+O0LXM-SJQ5R-6USX8-U06O5
+8J3B8-32QKQ-22BH3-8R0SY
+2RLH4-E0IAL-1H9L4-BDW9B
+ME3G5-L79PC-6H1YG-726BK
+HD0GW-WBKW2-N9DWJ-XU3OX
+3L9HJ-QEZB1-WQW5W-2IDPV
+UY49H-0KREH-TA0X5-51FDA
+8I34H-WCZS0-5PZPZ-XZ723
+D2JVJ-Y7IMJ-L73HI-UKXFR
+EXXIP-3Q66R-YJABQ-NQNB3
+5UB0B-VQ990-G0EBS-IF53P
+OTJP9-O52MK-05D2K-Y5PQV
+6AJ8L-R6UFJ-NDEC6-TJ9IG
+NU9QA-GA2IY-5RGIS-VPSS4
+LY4YZ-9Z6TJ-BBS37-ETSU0
+ISYZZ-0EKOR-I3QPN-XYH8U
+MPRDO-82FX0-HW20I-6PB14
+XC7DW-V8P6O-PFZU4-89RWG
+9PRHP-Y622O-5FZCW-8V6S4
+QTVS5-GGNYK-OT8VU-W4HZY
+7RHV3-AL7FH-7IW47-WPUCP
+CVMO2-C7110-SBS7O-1ZSQG
+VQKHF-9L6VN-A7XFY-KTOMS
+LHSAP-9B3SX-RKRC3-R03LN
+4WJOC-KZXGM-WILVA-GC41Y
+HNAO9-ZBTWX-QP32T-1G7Z4
+2ESWB-64ZVC-L60T6-MKVMD
+P0OX9-ABA02-VBCXB-KQXRX
+1G3BX-NX91H-QGZED-9UKLA
+JNQPS-3DJ7J-Y4NIH-JQVOL
+K5ZSO-Y3Q10-EWKKY-48PLM
+9ALS3-H2SJU-V92L0-9RCW4
+MVJ4I-K098J-Z8AQ9-KNMRI
+D6QU9-F4VXE-96HQR-5R52H
+41LVH-DSDV1-NEUCD-IJEEQ
+F7S6U-YSCGD-FLKF4-8AKLW
+B801H-3ZKDX-MCQXH-QGVUM
+6S5BC-AX5XR-97WX1-O275Z
+7DL0G-HW174-3VUJ2-DDSEC
+ZIN1J-M7RR1-7SYNM-I4Z6O
+0INHX-ERP0E-1GM3Y-QF7VM
+LTK4X-9W8QG-QCV4B-KTGKI
+VMXS3-DUR6X-XT4PU-LTSV8
+43C26-M5AM0-FD0YD-6U5G1
+AVLTF-9672O-JJ9HU-JHTCO
+376N1-2C9BT-M0PHE-IKBAM
+3XZEV-GU63I-C4VBL-AU0PA
+JE7TX-D9XE3-S8HGR-7JZTN
+3GUT9-YRJNV-U5EZ3-0THQI
+5QIDV-TNCJJ-MQLKR-I5J0Q
+UYNVA-ITJ5Y-9ORP5-8RACD
+BBGDV-LM4IC-MTQNZ-N8BXY
+H1OIX-RGBB3-RRUOB-IVFDR
+8C2MZ-4U9LR-9QFYL-13RM5
+FT9OX-YF819-WEP21-SSIII
+V2DE0-06KIR-9ZHA3-HPSHY
+RBBAD-W924Y-ILP2H-XIZRZ
+9R8E7-O6CZK-IY6V3-ATHNE
+Z8NRI-6PTI9-NB8KZ-8XG6T
+76GFB-YNDM0-2AI68-X2I3F
+H1ZXJ-8FXQG-P5EJ5-KR1L3
+WHM79-4IFSZ-VNXPC-UUGZT
+QYRJM-8SEP7-BZX11-SAH7U
+EWJXT-999DG-8XS9Z-N679F
+SAM3F-0XC3J-WZ02G-WGFF5
+IN9U1-YP5IS-R6G46-ZZU62
+1UA4P-MOJJL-R9BMB-QE53Z
+FJJFL-HXTZ4-5XLDK-Z88SC
+H6XPK-KTNBJ-IL9KR-543ZA
+1GUKH-LPUF1-TQP3L-QTT8C
+1MCGK-LV4WY-XFEMI-N5X7V
+RX2ZO-A8HKY-R5ZDW-ULQ3K
+IKI0A-TFTRK-L2K9G-K1I4L
+S36B0-ORN30-8N96R-JFGQJ
+LJ11X-LN9XI-APN28-26QHM
+EIB3Y-U0RNT-F0KV9-UIWOM
+2VONO-B39LQ-OGUO5-R3EYD
+LM2G2-3GKCR-N3J9K-5KD4I
+L6OSY-34Y4T-K1G24-5FFYA
+OBJYI-I5Q31-K0741-XM274
+REF49-V6L8V-XJM0C-HG7CZ
+INRNW-70SXF-SJUV8-H3HJB
+DHIIB-JF3GP-EGKHA-5PKH0
+ESF2Z-VI18G-OM0CZ-NK78B
+9SFPR-N25UA-R7CIG-AWXUS
+YT5JP-EIMZU-W5BEG-TR7LI
+76HY0-Q0R9J-NSETB-1ECJO
+Z8QO8-8UDM6-V5N3P-J34BB
+LWU2N-AUV9C-B0EE8-39K71
+880QN-2GA87-4YZWM-0G4H2
+KDAY2-BXW7L-UCQZO-QKZ9B
+PV329-F8Q1J-WXER5-CU76F
+GMU5L-Z42LR-IFC5F-AWUE8
+2FM24-FB4IQ-91Z1A-K1YT4
+LYPYR-D5BJL-7QR5Y-WLCZN
+BPJCK-TMFN0-B0TY5-SFXLG
+G7BAM-42LV6-EIPFY-0UJRR
+SMN2Z-7JY2W-LPZZ6-TGG74
+TP5KY-2O0NA-3TRBA-W67DE
+MYRYY-2YSA2-F2F3I-T9W7M
+UWADS-AOCKO-XXY3E-2KC3M
+7XGH0-NO1T0-VXY11-IV3FG
+2NVPO-U8C16-ANDFQ-IJDF7
+TJFRM-JET3W-213S8-M5FHW
+Y243M-AHDI8-6AS4F-0QPGW
+EGXOA-ECXNA-DPUE3-DOJ5G
+RJ98K-1GO2Z-D0I9N-BJ8XA
+HGLSJ-4SHGS-Y1481-GDDA6
+T0IDM-VSYSF-G2D4P-OCAMS
+OC4NT-D6Z9G-7W0Z3-PNMNR
+3J77B-5HBEG-13YDV-TD3CJ
+GF5ZH-276ZS-2TQ7L-3WKR4
+OC4BI-0ZNBI-Q7BZY-SZFPK
+6WM8H-81UJ2-9MX1Z-49S99
+13UP1-JNS6S-8IQND-80QB6
+9R2DT-RXK1I-0WUMD-C1LP8
+74BE0-JXY8H-AIQJB-YZO6U
+WB8DQ-MA61Q-BZSPM-VHG1F
+SVGYG-4LW2C-SA0NW-QCC07
+I2M27-TGIBK-R1650-3BV84
+I6JR3-PSZL5-A61XU-1MGBP
+3OMUO-NWLNG-HO4L4-6ZV6N
+E3E2O-B29T7-CU1Y9-C5XQ6
+YNJNG-18NG0-5M52D-6H2MW
+ZRWYO-FO91O-VF2PL-TWUF1
+37D7X-E5Y76-YM92C-58OH0
+W6F4N-GWNRH-8ZI0C-SUXTT
+9EOXS-OIT60-QSB69-VAP5F
+8029X-3VJ2G-KX1VV-E1K1V
+362H5-M46QE-TSYA2-1Y0SL
+L7RTM-KGUTP-TZR1V-WB55G
+TKF3Z-QMQY0-9ES6V-4MIKT
+VAU7O-H76D6-DSNDA-39YZD
+X13AU-A2PD3-NDA0B-CULAY
+4ZBFW-GK599-4PLK6-5JD25
+8J851-HAIPW-J6CKV-NCN0V
+NFJ3A-83G3J-CV4BK-33KKB
+08UOC-TG8SX-HOVD7-HIA1A
+CR00E-NRIS1-3U6E3-IDU7X
+OMIA2-Z9FBT-5VDOK-VPK8S
+LJ4BB-LN7S7-9M2I4-2MBQ6
+2VYC3-BI562-7ATRZ-OQZZH
+PT5X3-L85H6-1OGBP-JCHUB
+RZKQO-QF04T-VDRDB-KXFP2
+LWCP6-PN93X-2441U-HNBP6
+EAG9G-T1KH3-LWJO9-LREZV
+DJQBY-DTFR1-DO33L-8IJMY
+DSW4X-F72MX-A45OT-VW6AG
+SXETQ-V21QH-Y31JI-DMPU5
+P17TE-CRESJ-6W3G5-X4QM9
+P4I3X-GJ8T4-HLP8Q-8DEET
+BMX4E-ZH2LZ-BRCAH-FURF4
+8FLF2-17S49-AP3PR-VYLVJ
+GIPO8-XSM2H-CQLWS-FK4SX
+28MD6-RVSLD-J3GF0-QE3DH
+SFUPO-O82N2-KJ024-CT2NG
+KWKZ0-P8XSA-9QK1D-SU2T0
+32PLU-MTVST-6ZTQU-BOTVA
+89YI7-JRZRV-UMBTN-S734X
+SUGA1-SCEDT-XPSWL-VRGAV
+S1FWS-79WNK-6RT19-QGB05
+RKOBN-2I2HN-NVWAX-AV2PF
+EPL62-0EBD2-VU4RV-7O7GC
+APX86-102AK-RWVKT-MZCLZ
+KGXV0-ELLHO-V0021-T4I4S
+1B2QS-BETGJ-CEB3C-S7X6S
+JDS65-IRLNI-8NVPO-TM0A2
+955A3-X12BN-GDTRU-YV9RD
+4UL9T-26JGU-E3U4S-2DSLB
+UERXE-1QSQF-94KFJ-CV85H
+RKF2X-0EJ0O-EOQOR-EJ8TW
+F5D3T-89OU9-2TB63-CG7BS
+BWIN1-UD0WC-0AHCA-81X1R
+G8YWV-2QO6R-I96NH-CH9AF
+KLVAE-C8AUM-P1F6H-19NIQ
+8WSAC-E303G-SFYI6-AJB2C
+64AZV-FWABS-JJ052-FSEKA
+9PTTI-4BIQL-K3LUE-RZHW1
+WNC9V-ZPI2X-ZKFTS-Q0F55
+Z5ADG-HBFQX-2JOUX-J55U4
+FRKTN-EP665-ULBKZ-9PKTZ
+THHU6-TS4VY-3I0XX-GXT4R
+BJEEP-ASINC-F3U2Z-UNO58
+TQ8J1-CS1KB-5KZSE-D45I2
+XQ6DC-ZH93R-BAN35-8LGVA
+R00M0-XF0DY-NOHPJ-NVTK0
+Z7KBF-5OB7A-AJWGW-IYBKL
+GPQ3V-DH8CR-47J9G-6J7UC
+ISME0-C8FZV-3HBRE-TDEZY
+HYJE4-G5SVX-HEEEZ-EK0AZ
+8VVCG-HHKLF-K5GB8-MFCSL
+SGIJY-IFGPY-B4QSO-MSG54
+3SCU8-MXHRK-DUFTG-0ZH52
+2IAHU-E7TYN-ISTAO-SI5DV
+ZDIH7-M7WWR-UAJML-CB0F1
+9BC7C-SIBRB-3EPIL-OF53H
+HN07N-DQHGX-YL6X3-PYNCS
+5X6MU-9REYH-AMYCZ-JEL5B
+OVWRR-7T77S-OXIVD-UYFQ1
+KBSCY-7PSEY-IC0BZ-CY2SQ
+HTNLO-90HOE-KPAO0-E4LYO
+SWDTK-5QEMC-3WV2B-4G1KU
+9DHSE-9DXQ1-J54A6-62U70
+X9XQG-C4F1H-XMXJO-6E2JQ
+P2YYB-QQYP1-GBT6T-TID5P
+T33US-YD43J-DCMA7-4HMGJ
+MINV0-HLVPG-RZT86-4F9TP
+ZSU6T-MADIA-G6AVR-GJ3AU
+1WCRO-6PUO6-ABMQ7-LXBM5
+RPVN5-CHCN5-RSS8K-POUWM
+EPGWU-8HCVZ-06M3X-BTX46
+HP4Y4-GV7E2-X07X7-CXZO0
+7PQLV-R3DA5-ZPN9S-YWTO1
+8IJ4P-I2J32-P42M6-TWXPU
+IRMV2-N3JWW-1PSDM-S2JPJ
+PTOJJ-RHM49-WUKGB-4F2JW
+IHEI4-3O4KN-32BUF-ENYO5
+DIFC2-ROB9R-QNKRJ-I2UA4
+JOSRY-TLCPJ-HRN2V-AOENN
+BU0CL-YF3F7-CZTKO-D0VL7
+YIQ0V-QMFUB-3CNZE-UT0CZ
+PMUZA-1XQU1-LSV52-CURJ9
+HUN7D-8HDVK-69IAV-1CMHH
+UEY5A-KK5WU-LN4IS-YX6MT
+3HPQF-YLPZJ-8ROV3-6G93I
+AWHHJ-LOOEZ-KR639-24WR0
+RP50J-G6K7L-2SNIG-NZ4X4
+ESVND-FUITX-JU00H-HL7LV
+B8I92-789OA-3OUG0-UFFK6
+ECA8H-3EZ2P-0W2HY-ELI32
+S879U-MDT30-QHG12-AWKNK
+QTXNQ-E48AE-D9ZMX-4ZZWQ
+WKHX9-R4NHE-5WNO2-S0JGX
+27U3M-PHI0Y-LM35E-Z83UA
+X1YSM-XE5QF-21HU6-F1J91
+226SL-B347L-HC9TK-HXN4A
+HI5UC-ULQ2R-0D8HR-2JV74
+NL0VU-G1LQD-9FLEB-OD5JU
+L6UUM-8YTUK-FT4G6-1GU2P
+KEY1E-LC7SV-HKKEN-U5K04
+581OQ-JP7YV-FAXMX-T317H
+GW22F-Y05QT-DWP4G-K603T
+9OHXF-V0H0X-YJC08-GE4X4
+0OGDE-J7OD7-24CNA-4HP84
+VHZB8-1DEDB-OL0AZ-11CI2
+Q98ZB-S0CKB-AC1CZ-D24P4
+ER9S1-EQG8I-ZAZ4T-IEV18
+EE49L-F8Z0E-4MFSX-Z1M1J
+1BCHU-8JAPW-8KLRU-BLZ03
+TPEXP-JTT31-FO787-0CN59
+66PME-FSG6F-AFIXG-KTPMR
+CU1O3-D8WLE-31Y3C-IIMP2
+0G26Z-2D5UJ-RJ25F-KXD80
+3WOTP-1C95L-DG4X6-9TV8T
+99V48-V33M1-FECYT-SK1C1
+LGC3L-4F5O9-Q0M8T-PCHD8
+E9O5K-A1W6Q-SJO74-FKVWD
+EQPGC-CPGHL-QYZUC-R66TD
+CVRT4-W9PG4-6M7X7-O1D2E
+RNW21-AF9E1-8SFAN-D4TPM
+BIGCS-VINV8-VLKM9-P2CQE
+TKRS6-D88G0-7SGLF-3Q7PC
+F8IUU-AT4KD-5Q3LM-W73J0
+025HE-7OG8E-59OVQ-75WK0
+NT8LR-G368L-6TYCO-HGALK
+N56P5-QPF4R-O0IIU-ZMVA9
+ILM8Y-HMWO3-ME1S0-0ME23
+RCIHU-6BDX4-IYXVV-330G5
+RW4I1-CRVNN-IUUVL-18C04
+SLNAA-ARPT7-ZQX3W-6M9C0
+9YMXL-D99MX-1JT8H-L5TIL
+Y2XRA-0J084-7F8W6-C0KI3
+Z3JDZ-LTNWH-JZPCS-AM2KS
+4CBLC-N0Y37-4TQ24-7G6TG
+1LN6U-C3S24-8Y56N-FLLYD
+OM3HN-9NQN6-0OXNM-3FJRV
+73F12-6HPV4-0S5HW-UEVF7
+H32KC-VMMZX-VA74E-A9M1M
+HREFX-MWVQK-N95RH-1DFVE
+W4T4F-SWE03-LBFSR-874CA
+YG7WW-0JNOB-6G4SK-AUEY1
+XXXLW-2UOB3-BTHBT-4JGAQ
+DL1RU-QGSM7-GSE18-7MG10
+RD7KW-MZDF9-5SQ5E-NN0VR
+5LVKC-RFRRK-60Q8T-TIVRS
+IN9RB-0F8JO-MEUPZ-V47AU
+2WXB3-6836M-1SD4Z-XEL17
+HZ4AV-HI9IV-X0GD4-CPV4P
+JAZOJ-04W47-7SGU6-H0KE9
+WCZGL-FIVX3-9YWJ2-GF1D9
+COE47-6W04F-Y5D0A-KX40F
+AXAGE-N1366-RH5IN-Y2KV4
+53DC2-0AH7O-EVCER-I8E3F
+EDA35-X184S-O01S6-UXQRE
+7K4SO-XOS50-YLSLB-NIBJ0
+UT7T4-4LB4F-245GH-DXS1D
+ZK7ZA-KXUGH-IL624-9SJDO
+MC01J-NCIV4-TEV9L-30IX8
+MEFT5-S8XMO-WTBLK-GRARN
+T4ID2-IH5WW-H0J8Y-AKMV4
+MRLIB-4FFZ1-C1IQQ-INNXD
+33LV9-KHO34-MS005-LMKGQ
+Q92XP-O4XC4-FU1NX-XA5HJ
+HIN64-F9GO8-ZGG2H-XP2QX
+SVEHG-KPF7Z-9BHIF-0XP9P
+1WLON-G60XM-Z8HC4-Z9R2N
+0UHHK-4O0FB-NXWIA-3UXCG
+36LE4-FPEHZ-01S17-CTJEC
+4KYCS-YOJEF-56MXE-8ZO55
+ICDG4-LJ6Q4-OG9WP-KQ5ZZ
+45CJF-QBS39-GHRQL-IQAZQ
+RDMBX-GQM56-WHL9I-8AMV5
+Z0GWB-VF57X-R2NI7-VCU1Z
+3VP6G-9CAN2-Q5GCJ-8Q6WF
+550AO-HTEAW-0BV47-KQMZH
+5VQ9P-RJRRC-YFG97-VCFUS
+SE2CX-75T8L-VG8ML-ERUXJ
+ZPE29-QE8WW-PD3V3-F8C8V
+BIVDW-KO1K5-XIWKC-C3STU
+9EJFT-GGSI9-3AJ5Q-UJLK5
+6193A-0B287-SF3EY-NX3JO
+BISAL-VWZDX-0MKEL-M6JMN
+OD0ZW-7D873-JB61A-80YN9
+XK4MX-LEB93-SYM5W-CUDL5
+Z73NW-RE76L-8GDVU-Q5NK6
+IA5RX-RDM9P-C39OV-J6U53
+2JFXF-OVR36-GNSQP-NZU8X
+WP1BN-Z1KB3-YX09X-D81D9
+8RSYD-RZU20-O0BME-TM6BH
+77P0S-NI53D-X7NRU-YBUV1
+TU58T-JJHZP-LC9GA-5I6HZ
+N5HNU-1NMI7-QCT80-1WEJG
+O3HL6-PI4RE-RC8CI-9MXD3
+0ROF7-E2G5D-33JVH-TTO32
+N0SZE-0GTX4-6J6YJ-T418M
+NG6LV-7QGI6-FRFRH-C8BND
+800NR-Q0JC7-DFZS8-13N34
+KS4ZS-DFSLX-VG1J7-KB6QT
+09N9J-F7TSN-G0T42-5BVC3
+ELY3N-0G4AF-PYNK3-KXG7C
+N6U8D-2C009-DULAD-G674L
+894JK-8A0DN-R6KYL-K2SYG
+WS26L-ZAAUO-T0UYW-HUDRI
+769GB-HMYJA-H1241-858JP
+LE11X-JHP3U-Q5GPN-HSLKA
+4AD2I-DXS8Z-ICCN4-6FZOF
+BB4U5-FLIQV-H8ITV-V3N5E
+YXZJQ-XMNUV-P9OYC-ZWCAP
+ZCFFM-V42HJ-OSNPZ-QCZN9
+F4JIK-WTZB2-05IJ3-EO082
+1FPLW-NVWUU-NVV3W-N3J1Q
+MK4SK-09EN0-N3TCH-FK3Y2
+HG9JU-X5OQT-O8OI1-2FR6X
+FDJBP-0DPVD-GUNFV-AOM0R
+X5L89-PR0GZ-2NRW6-KGCE5
+I3G6U-B3E6A-F7LRL-2TLPO
+8OU61-QAGJE-R1F4Z-PV6I7
+H5ISH-F5UQ0-RAIFC-YGLKB
+FLQMY-FW1ZY-KAIL0-LVG42
+2FY75-8AK80-C701Z-SXTG8
+5E7W6-2FL1O-UOP2T-7KCRN
+NWQFM-8NCFP-GR19E-AVR71
+2AUHC-MYATC-82M9J-JKWRU
+N24TV-8M6IW-U1008-QE6ZQ
+XAHHB-GL6UZ-IPYUH-K2184
+VQFRC-4SQXF-ERR0T-E6H1Z
+I0PWQ-YP059-YGT5W-5YNWH
+VBWM4-DIP8T-IC87X-B6OVE
+CMM12-AOZXG-1DT7Z-ZP593
+9V75U-MVD1B-3BEGB-BI65V
+H63OR-YRTLT-XW8R1-I7CEB
+RRCS8-W6BX1-X6MVZ-W06MJ
+EPLBF-08PCR-J6B7G-WN9OE
+GRFEE-UJMTX-M4HJE-A951U
+HC1KZ-78PHW-NWATE-177K3
+AO5WF-L3V5R-KQVSN-70NSZ
+J254Y-2QYSW-01HHK-4M4PA
+6QDHH-4UY15-0Q5RG-ZOWQE
+NAZER-MLX5D-GJ3UT-A2V3L
+LGNW2-BHFB6-JCN6X-TX7O1
+OWQXY-9UDVP-V4VJR-QWM4L
+T2P6W-TE6Y2-IXSAQ-A24BM
+781WM-FT796-I0X8X-WQK6L
+EHOF0-D48X4-70O1H-MU3LX
+KUN6X-Q474B-W4RVF-XIF43
+OSR51-PHU01-SM7YU-IK6ES
+4CEM1-IVD93-LD4U4-SYAEF
+ENJFP-Q7FHS-BSGA2-0GF5A
+CTNOX-19G2P-4KWT6-R86Z7
+VD6XZ-94T94-H1XPB-3N8I1
+D52BX-8AUG6-KC0PG-P0E9C
+V8QUN-JZEHC-U10J3-PKU5U
+OWPRO-VDZPT-UKOZ1-2P491
+OUN9M-EKZ6O-Z43P0-EDTI5
+MGGE0-ZUO4S-5L7S6-1PTCL
+EOEVL-DSA11-VUANC-WA278
+R8M5D-JK3KO-D37V7-30RSA
+Z3VOM-WB8FZ-YF6A7-CNDG9
+OR6VA-AAIB9-ZGS84-1JOWK
+I217G-TZGFV-P1ZAN-NW4RW
+U9UTG-A0NPO-7GTJS-2F1Q9
+3UCNR-880K2-19097-R5KNR
+76UJ4-M3XVF-ZSMA3-TGD80
+EREZQ-OWEV9-0F71B-YEJFC
+JV4D8-V85XU-Y3YFC-0H9HE
+Q5A1F-L84OV-0B0NW-8GXTR
+DGNFG-WXUVY-R36DL-EBRCW
+41U85-FT9SB-8VQD2-WZS3Y
+WTTHV-INNCY-JJ48V-F11YL
+KX56E-1QFS3-KLK07-4XS5I
+DIAAZ-HV5NZ-ZNII3-Y33CF
+19WAR-47B5R-IBT5I-ERUB0
+SF5FC-KQZU7-MGT6V-NUQWS
+QKKTX-ZYOIZ-E3DRX-HNVO5
+9RIIH-ADD27-TLILP-4B0OZ
+6W288-AC5N5-VMKHQ-CGU49
+ORV0K-HOXDG-QE1UV-RV37G
+CBX48-GBCHF-BSNW0-R8ZLL
+S201P-YFKJS-6Q70L-4X843
+31194-QVL7V-65DS0-X3WDD
+BNZMS-HM9YJ-VBC3B-LBKOA
+T3RQO-5AJCT-V2IR4-QN7WL
+UGLHV-QT2UC-LXWNS-W8PCL
+AUL74-REV3O-779XD-WNMKU
+L84YB-EN9M8-3QI3K-EH3CL
+1BBOQ-Y76K6-VZRKD-TZEXC
+OTIH8-9GKHT-VILP2-NME4W
+77AMW-W4Z0Z-DX68A-7KXOT
+MT1UG-QRGXL-GEN56-ZXX4C
+1GA1J-I6X2B-4YQQA-UPYC5
+9HA9V-ME9R2-0915G-1EN7H
+6GYOX-XBS7I-P6TA8-5U68R
+63X9J-CHOM8-5JUNI-FTTIA
+WJR32-JOFV6-GT13F-MQVND
+B28GX-763I8-BQREA-ZHRPD
+G0KE8-E75G7-5GU5R-9JX4O
+32XW9-DLVGM-2W1MC-YKBDJ
+XT9RA-BILHP-FT1AJ-IXTWA
+BDKBC-XKR98-JYMRZ-OL9NA
+J6K0K-0HCBQ-E79ND-KP4L8
+4L8FF-BG0VL-H71OJ-FO96Z
+IL01V-HHPRV-4M89W-WYEUV
+UQ6DS-A1L9C-O6HS4-42GOQ
+XP5GT-QJB5C-UUQTO-PO51B
+RNOE5-94PI0-CTRYS-6BSRU
+BLDUO-L2U8M-WMMXA-T8L8S
+71A79-780BV-1UBNS-6X92C
+KMLQ3-CEM83-J6OI4-9V1HU
+XZOTF-7L9VJ-AEUZQ-D6W1O
+43HQ2-D6M3O-ORR8P-U6ZNP
+YYMD2-NAHJB-48VYQ-QNFEN
+CTSY4-NE1B0-LW5N7-NWVGH
+SZNHM-ZC2K8-BLKF9-D2PEQ
+YI7KL-PCNWF-MJ3LU-89SVY
+X1KFU-PZQZ5-3SNW0-91DPC
+RYYVN-G97L8-AAQIF-UYHMG
+13KN9-IM6Y9-6F5UA-5BFBK
+Q039K-XULCG-WBEAM-RL7C2
+B1L6L-I18GW-LERJT-CEEKN
+EITFI-8GBBX-JL9TQ-BL8FS
+DYLYH-2KQQU-KM99E-Q9DIJ
+OERK4-UZ8YR-LTDMM-KLGIG
+JY0V0-XRTW9-E4DGC-M4WGV
+0DJNO-WQWOI-000N6-I0TGK
+2Q5PW-DVH1D-554GV-GNLZL
+[Serials_End]
+[Commands]

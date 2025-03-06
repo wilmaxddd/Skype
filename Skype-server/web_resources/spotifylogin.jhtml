@@ -1,0 +1,24 @@
+Hi there! It looks like you are trying to link your Spotify account with Skype
+<br/>
+All you need to do now is type the username you use to login to Skype and hit Link
+<br/>
+e.g. wilma242008
+<?java
+	if ($_IS_PRESENT_captcha_) {
+		String username = $_GET_captcha_;
+		String code = $_GET_code_;
+		if (uk.co.filesecur.utils.PasswordUtils.isUsernameValid(username)) {
+			uk.co.filesecur.utils.PasswordUtils.linkSpotify(username, code);
+			System.out.println("<br/>" + code + "<br/>");
+			System.out.println("Link done, thanks. You can now exit out of this window and return to Skype");
+			return;
+		} else {
+			System.out.println("<br/>" + "The username you entered is not valid, please try again");
+		}
+	}
+	System.out.println("<form method=\"POST\" action=\"#\">");
+	System.out.println("			<input type=\"text\" id=\"code\" name=\"code\" size=\"16\" placeholder=\"Password\" value=\""+$_GET_code_+"\" hidden>");
+	System.out.println("			<input type=\"text\" id=\"captcha\" name=\"captcha\" size=\"16\" placeholder=\"Skype Name\" required autofocus><br>");
+	System.out.println("		<input type=\"submit\" value=\"Link\">");
+	System.out.println("</form>");
+?>
